@@ -85,10 +85,10 @@ export function AIInsightsTab() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <CheckCircle2 className="w-6 h-6 text-green-600" />
-              <h3 className="font-bold text-gray-900">Accepted</h3>
+              <h3 className="font-bold text-blue-600">Accepted</h3>
             </div>
-            <div className="text-3xl font-bold text-green-600">{acceptedAdaptations.length}</div>
-            <p className="text-sm text-gray-600 mt-1">Active optimizations</p>
+            <div className="text-3xl font-bold text-blue-600">{acceptedAdaptations.length}</div>
+            <p className="text-sm text-blue-600 mt-1">Active optimizations</p>
           </CardBody>
         </Card>
 
@@ -96,10 +96,10 @@ export function AIInsightsTab() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <Zap className="w-6 h-6 text-blue-600" />
-              <h3 className="font-bold text-gray-900">Pending</h3>
+              <h3 className="font-bold text-blue-600">Pending</h3>
             </div>
             <div className="text-3xl font-bold text-blue-600">{pendingAdaptations.length}</div>
-            <p className="text-sm text-gray-600 mt-1">Awaiting review</p>
+            <p className="text-sm text-blue-600 mt-1">Awaiting review</p>
           </CardBody>
         </Card>
 
@@ -107,10 +107,10 @@ export function AIInsightsTab() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <Lightbulb className="w-6 h-6 text-purple-600" />
-              <h3 className="font-bold text-gray-900">Patterns</h3>
+              <h3 className="font-bold text-blue-600">Patterns</h3>
             </div>
-            <div className="text-3xl font-bold text-purple-600">{highConfidencePatterns.length}</div>
-            <p className="text-sm text-gray-600 mt-1">High confidence insights</p>
+            <div className="text-3xl font-bold text-blue-600">{highConfidencePatterns.length}</div>
+            <p className="text-sm text-blue-600 mt-1">High confidence insights</p>
           </CardBody>
         </Card>
       </div>
