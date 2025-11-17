@@ -1,0 +1,414 @@
+import { useState, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  LayoutDashboard,
+  Calendar,
+  TrendingUp,
+  Shield,
+  Brain,
+  BookOpen,
+  Moon,
+  Sun,
+  Menu,
+  X,
+  Settings
+} from 'lucide-react';
+import { TimeBlock, ChecklistProgress } from './types';
+import { supabase } from './lib/supabase';
+import { useScheduleData } from './hooks/useScheduleData';
+import { Dashboard } from './components/Dashboard';
+import { DailyScheduleView } from './components/DailyScheduleView';
+import { TaskDetailModal } from './components/TaskDetailModal';
+import { EnhancedProgressDashboard } from './components/EnhancedProgressDashboard';
+import { AIInsightsTab } from './components/AIInsightsTab';
+import { EnhancedDisciplineTracker } from './components/EnhancedDisciplineTracker';
+import { ResourceLibrary } from './components/ResourceLibrary';
+import { TemplateSelector } from './components/TemplateSelector';
+import { TimeBlockEditor } from './components/TimeBlockEditor';
+
+type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline' | 'resources';
+
+function App() {
+  const { templates, blocks, instructions, allResources, loading, reload } = useScheduleData();
+  const [activeTemplateId, setActiveTemplateId] = useState('');
+  const [completedBlocks, setCompletedBlocks] = useState<Set<string>>(new Set());
+  const [checklistProgress, setChecklistProgress] = useState<ChecklistProgress[]>([]);
+  const [selectedBlock, setSelectedBlock] = useState<TimeBlock | null>(null);
+  const [editingBlock, setEditingBlock] = useState<TimeBlock | null>(null);
+  const [isAddingBlock, setIsAddingBlock] = useState(false);
+  const [currentView, setCurrentView] = useState<View>('dashboard');
+  const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [streak, setStreak] = useState(5);
+
+  useEffect(() => {
+    if (templates.length > 0 && !activeTemplateId) {
+      setActiveTemplateId(templates[0].id);
+    }
+  }, [templates]);
+
+  useEffect(() => {
+    loadProgress();
+    const savedStreak = localStorage.getItem('streak');
+    const savedDarkMode = localStorage.getItem('darkMode');
+
+    if (savedStreak) {
+      setStreak(parseInt(savedStreak));
+    }
+    if (savedDarkMode) {
+      setDarkMode(JSON.parse(savedDarkMode));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  const loadProgress = async () => {
+    const today = new Date().toISOString().split('T')[0];
+
+    const { data: progressData } = await supabase
+      .from('user_progress')
+      .select('time_block_id')
+      .eq('completion_date', today);
+
+    const { data: checklistData } = await supabase
+      .from('checklist_progress')
+      .select('*')
+      .eq('completion_date', today);
+
+    if (progressData) {
+      setCompletedBlocks(new Set(progressData.map(p => p.time_block_id)));
+    }
+
+    if (checklistData) {
+      setChecklistProgress(checklistData.map(c => ({
+        id: c.id,
+        userId: 'default',
+        instructionId: c.instruction_id,
+        completionDate: c.completion_date,
+        completed: c.completed,
+        completedAt: c.completed_at
+      })));
+    }
+  };
+
+  const currentBlocks = blocks.filter(block => block.templateId === activeTemplateId);
+
+  const handleBlockClick = (block: TimeBlock) => {
+    setSelectedBlock(block);
+  };
+
+  const handleChecklistToggle = async (instructionId: string, completed: boolean) => {
+    const today = new Date().toISOString().split('T')[0];
+
+    const existing = checklistProgress.find(
+      p => p.instructionId === instructionId && p.completionDate === today
+    );
+
+    if (existing) {
+      await supabase
+        .from('checklist_progress')
+        .update({
+          completed,
+          completed_at: completed ? new Date().toISOString() : null
+        })
+        .eq('instruction_id', instructionId)
+        .eq('completion_date', today);
+    } else {
+      await supabase
+        .from('checklist_progress')
+        .insert({
+          instruction_id: instructionId,
+          completion_date: today,
+          completed,
+          completed_at: completed ? new Date().toISOString() : null
+        });
+    }
+
+    await loadProgress();
+  };
+
+  const handleMarkComplete = async () => {
+    if (selectedBlock) {
+      const today = new Date().toISOString().split('T')[0];
+
+      await supabase
+        .from('user_progress')
+        .upsert({
+          time_block_id: selectedBlock.id,
+          completion_date: today,
+          completed_at: new Date().toISOString()
+        });
+
+      const blockInstructions = instructions.filter(
+        inst => inst.timeBlockId === selectedBlock.id && inst.isChecklistItem
+      );
+
+      for (const inst of blockInstructions) {
+        await handleChecklistToggle(inst.id, true);
+      }
+
+      await loadProgress();
+      setSelectedBlock(null);
+
+      if (completedBlocks.size + 1 === currentBlocks.length) {
+        const newStreak = streak + 1;
+        setStreak(newStreak);
+        localStorage.setItem('streak', newStreak.toString());
+      }
+    }
+  };
+
+  const selectedBlockInstructions = selectedBlock
+    ? instructions.filter(inst => inst.timeBlockId === selectedBlock.id)
+    : [];
+
+  const selectedBlockResources = selectedBlock
+    ? allResources.filter(res => res.timeBlockId === selectedBlock.id)
+    : [];
+
+  const today = new Date().toISOString().split('T')[0];
+  const todayChecklistProgress = checklistProgress.filter(p => p.completionDate === today);
+
+  const navigationItems = [
+    { id: 'dashboard' as View, label: 'Dashboard', icon: LayoutDashboard },
+    { id: 'schedule' as View, label: 'Schedule', icon: Calendar },
+    { id: 'progress' as View, label: 'Analytics', icon: TrendingUp },
+    { id: 'ai-insights' as View, label: 'AI Insights', icon: Brain },
+    { id: 'discipline' as View, label: 'Discipline', icon: Shield },
+    { id: 'resources' as View, label: 'Resources', icon: BookOpen }
+  ];
+
+  const currentTemplate = templates.find(t => t.id === activeTemplateId);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 flex items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center"
+        >
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-xl font-semibold text-gray-700">Loading your transformation schedule...</p>
+        </motion.div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50'}`}>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: '#fff',
+            color: '#1f2937',
+            padding: '16px',
+            borderRadius: '12px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
+          },
+        }}
+      />
+
+      <nav className={`sticky top-0 z-50 backdrop-blur-lg ${darkMode ? 'bg-gray-800/90 border-gray-700' : 'bg-white/80'} border-b shadow-lg`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-3">
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.5 }}
+                className="bg-gradient-to-br from-blue-600 to-cyan-500 p-2 rounded-xl shadow-lg"
+              >
+                <LayoutDashboard className="w-6 h-6 text-white" />
+              </motion.div>
+              <div>
+                <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Ultimate Schedule Transformation
+                </h1>
+                <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  AI-Powered Productivity Platform
+                </p>
+              </div>
+            </div>
+
+            <div className="hidden md:flex items-center gap-1">
+              {navigationItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <motion.button
+                    key={item.id}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setCurrentView(item.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
+                      currentView === item.id
+                        ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg'
+                        : darkMode
+                        ? 'text-gray-300 hover:bg-gray-700'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {item.label}
+                  </motion.button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setDarkMode(!darkMode)}
+                className={`p-2 rounded-xl transition-colors ${
+                  darkMode ? 'bg-gray-700 text-yellow-400' : 'bg-gray-100 text-gray-700'
+                }`}
+              >
+                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </motion.button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`md:hidden p-2 rounded-xl ${
+                  darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="md:hidden py-4 space-y-2"
+              >
+                {navigationItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        setCurrentView(item.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all ${
+                        currentView === item.id
+                          ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg'
+                          : darkMode
+                          ? 'text-gray-300 hover:bg-gray-700'
+                          : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <Icon className="w-5 h-5" />
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentView}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {currentView === 'dashboard' && (
+              <Dashboard
+                blocks={currentBlocks}
+                completedBlocks={completedBlocks}
+                streak={streak}
+                currentTemplate={currentTemplate?.name || ''}
+              />
+            )}
+
+            {currentView === 'schedule' && (
+              <div className="space-y-6">
+                <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-6 shadow-lg`}>
+                  <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                    Select Your Schedule Template
+                  </h2>
+                  <TemplateSelector
+                    templates={templates}
+                    activeTemplateId={activeTemplateId}
+                    onTemplateChange={setActiveTemplateId}
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  {currentBlocks.map((block) => (
+                    <div key={block.id} onClick={() => handleBlockClick(block)}>
+                      <DailyScheduleView
+                        blocks={[block]}
+                        completedBlocks={completedBlocks}
+                        onBlockClick={handleBlockClick}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {currentView === 'progress' && (
+              <EnhancedProgressDashboard
+                blocks={currentBlocks}
+                completedBlocks={completedBlocks}
+                streak={streak}
+              />
+            )}
+
+            {currentView === 'ai-insights' && <AIInsightsTab />}
+
+            {currentView === 'discipline' && <EnhancedDisciplineTracker />}
+
+            {currentView === 'resources' && <ResourceLibrary resources={allResources} />}
+          </motion.div>
+        </AnimatePresence>
+      </main>
+
+      {selectedBlock && (
+        <TaskDetailModal
+          block={selectedBlock}
+          instructions={selectedBlockInstructions}
+          resources={selectedBlockResources}
+          checklistProgress={todayChecklistProgress}
+          onClose={() => setSelectedBlock(null)}
+          onChecklistToggle={handleChecklistToggle}
+          onMarkComplete={handleMarkComplete}
+        />
+      )}
+
+      {editingBlock && (
+        <TimeBlockEditor
+          block={editingBlock}
+          templateId={activeTemplateId}
+          onClose={() => setEditingBlock(null)}
+          onSave={() => {
+            reload();
+            setEditingBlock(null);
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+export default App;

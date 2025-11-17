@@ -1,0 +1,448 @@
+import { useState, useEffect } from 'react';
+import { TimeBlock, ChecklistProgress } from './types';
+import { supabase } from './lib/supabase';
+import { useScheduleData } from './hooks/useScheduleData';
+import { DailyScheduleView } from './components/DailyScheduleView';
+import { TaskDetailModal } from './components/TaskDetailModal';
+import { ProgressDashboard } from './components/ProgressDashboard';
+import { ResourceLibrary } from './components/ResourceLibrary';
+import { TemplateSelector } from './components/TemplateSelector';
+import { TimeBlockEditor } from './components/TimeBlockEditor';
+import { DisciplineCode } from './components/DisciplineCode';
+import { DailyRuleReview } from './components/DailyRuleReview';
+import { RulesManifesto } from './components/RulesManifesto';
+import { AIScheduleAssistant } from './components/AIScheduleAssistant';
+import { Calendar, TrendingUp, BookOpen, Shield, Moon, Sun, Menu, X, CreditCard as Edit, Plus, Trash2, ClipboardCheck, ScrollText } from 'lucide-react';
+
+type View = 'schedule' | 'progress' | 'resources' | 'discipline' | 'rules';
+
+function App() {
+  const { templates, blocks, instructions, allResources, loading, reload } = useScheduleData();
+  const [activeTemplateId, setActiveTemplateId] = useState('');
+  const [completedBlocks, setCompletedBlocks] = useState<Set<string>>(new Set());
+  const [checklistProgress, setChecklistProgress] = useState<ChecklistProgress[]>([]);
+  const [selectedBlock, setSelectedBlock] = useState<TimeBlock | null>(null);
+  const [editingBlock, setEditingBlock] = useState<TimeBlock | null>(null);
+  const [isAddingBlock, setIsAddingBlock] = useState(false);
+  const [currentView, setCurrentView] = useState<View>('schedule');
+  const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [streak, setStreak] = useState(1);
+  const [showDailyReview, setShowDailyReview] = useState(false);
+
+  useEffect(() => {
+    if (templates.length > 0 && !activeTemplateId) {
+      setActiveTemplateId(templates[0].id);
+    }
+  }, [templates]);
+
+  useEffect(() => {
+    loadProgress();
+    const savedStreak = localStorage.getItem('streak');
+    const savedDarkMode = localStorage.getItem('darkMode');
+
+    if (savedStreak) {
+      setStreak(parseInt(savedStreak));
+    }
+    if (savedDarkMode) {
+      setDarkMode(JSON.parse(savedDarkMode));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  const loadProgress = async () => {
+    const today = new Date().toISOString().split('T')[0];
+
+    const { data: progressData } = await supabase
+      .from('user_progress')
+      .select('time_block_id')
+      .eq('completion_date', today);
+
+    const { data: checklistData } = await supabase
+      .from('checklist_progress')
+      .select('*')
+      .eq('completion_date', today);
+
+    if (progressData) {
+      setCompletedBlocks(new Set(progressData.map(p => p.time_block_id)));
+    }
+
+    if (checklistData) {
+      setChecklistProgress(checklistData.map(c => ({
+        id: c.id,
+        userId: 'default',
+        instructionId: c.instruction_id,
+        completionDate: c.completion_date,
+        completed: c.completed,
+        completedAt: c.completed_at
+      })));
+    }
+  };
+
+  const currentBlocks = blocks.filter(block => block.templateId === activeTemplateId);
+
+  const handleBlockClick = (block: TimeBlock) => {
+    if (editMode) {
+      setEditingBlock(block);
+    } else {
+      setSelectedBlock(block);
+    }
+  };
+
+  const handleChecklistToggle = async (instructionId: string, completed: boolean) => {
+    const today = new Date().toISOString().split('T')[0];
+
+    const existing = checklistProgress.find(
+      p => p.instructionId === instructionId && p.completionDate === today
+    );
+
+    if (existing) {
+      await supabase
+        .from('checklist_progress')
+        .update({
+          completed,
+          completed_at: completed ? new Date().toISOString() : null
+        })
+        .eq('instruction_id', instructionId)
+        .eq('completion_date', today);
+    } else {
+      await supabase
+        .from('checklist_progress')
+        .insert({
+          instruction_id: instructionId,
+          completion_date: today,
+          completed,
+          completed_at: completed ? new Date().toISOString() : null
+        });
+    }
+
+    await loadProgress();
+  };
+
+  const handleMarkComplete = async () => {
+    if (selectedBlock) {
+      const today = new Date().toISOString().split('T')[0];
+
+      await supabase
+        .from('user_progress')
+        .upsert({
+          time_block_id: selectedBlock.id,
+          completion_date: today,
+          completed_at: new Date().toISOString()
+        });
+
+      const blockInstructions = instructions.filter(
+        inst => inst.timeBlockId === selectedBlock.id && inst.isChecklistItem
+      );
+
+      for (const inst of blockInstructions) {
+        await handleChecklistToggle(inst.id, true);
+      }
+
+      await loadProgress();
+      setSelectedBlock(null);
+
+      if (completedBlocks.size + 1 === currentBlocks.length) {
+        const newStreak = streak + 1;
+        setStreak(newStreak);
+        localStorage.setItem('streak', newStreak.toString());
+      }
+    }
+  };
+
+  const handleDeleteBlock = async (blockId: string) => {
+    if (!confirm('Are you sure you want to delete this time block? This will also delete all its instructions and progress.')) {
+      return;
+    }
+
+    await supabase
+      .from('time_blocks')
+      .delete()
+      .eq('id', blockId);
+
+    await reload();
+  };
+
+  const selectedBlockInstructions = selectedBlock
+    ? instructions.filter(inst => inst.timeBlockId === selectedBlock.id)
+    : [];
+
+  const selectedBlockResources = selectedBlock
+    ? allResources.filter(res => res.timeBlockId === selectedBlock.id)
+    : [];
+
+  const today = new Date().toISOString().split('T')[0];
+  const todayChecklistProgress = checklistProgress.filter(p => p.completionDate === today);
+
+  const navigationItems = [
+    { id: 'schedule' as View, label: 'Schedule', icon: Calendar },
+    { id: 'progress' as View, label: 'Progress', icon: TrendingUp },
+    { id: 'discipline' as View, label: 'Discipline', icon: Shield },
+    { id: 'rules' as View, label: 'Rules', icon: ScrollText },
+    { id: 'resources' as View, label: 'Resources', icon: BookOpen }
+  ];
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading your schedule...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'}`}>
+      <nav className={`sticky top-0 z-40 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white'} border-b shadow-sm`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center gap-3">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
+                <Calendar className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Life Transformation
+                </h1>
+                <p className={`text-xs ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                  Your Daily Schedule Coach
+                </p>
+              </div>
+            </div>
+
+            <div className="hidden md:flex items-center gap-2">
+              {navigationItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setCurrentView(item.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                      currentView === item.id
+                        ? 'bg-blue-600 text-white'
+                        : darkMode
+                        ? 'text-gray-300 hover:bg-gray-700'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    {item.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-2">
+              {currentView === 'schedule' && (
+                <button
+                  onClick={() => setEditMode(!editMode)}
+                  className={`hidden md:flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                    editMode
+                      ? 'bg-orange-600 text-white'
+                      : darkMode
+                      ? 'bg-gray-700 text-gray-300'
+                      : 'bg-gray-100 text-gray-700'
+                  }`}
+                >
+                  <Edit className="w-4 h-4" />
+                  {editMode ? 'Done Editing' : 'Edit Schedule'}
+                </button>
+              )}
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className={`p-2 rounded-lg transition-colors ${
+                  darkMode ? 'bg-gray-700 text-yellow-400' : 'bg-gray-100 text-gray-700'
+                }`}
+              >
+                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className={`md:hidden p-2 rounded-lg ${
+                  darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 space-y-2">
+              {navigationItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setCurrentView(item.id);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${
+                      currentView === item.id
+                        ? 'bg-blue-600 text-white'
+                        : darkMode
+                        ? 'text-gray-300 hover:bg-gray-700'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    {item.label}
+                  </button>
+                );
+              })}
+              <button
+                onClick={() => {
+                  setEditMode(!editMode);
+                  setMobileMenuOpen(false);
+                }}
+                className={`w-full flex items-center gap-2 px-4 py-3 rounded-lg font-medium transition-all ${
+                  editMode ? 'bg-orange-600 text-white' : darkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                <Edit className="w-5 h-5" />
+                {editMode ? 'Done Editing' : 'Edit Schedule'}
+              </button>
+            </div>
+          )}
+        </div>
+      </nav>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {currentView === 'schedule' && (
+          <div className="space-y-6">
+            <div className={`${darkMode ? 'bg-gray-800' : 'bg-white'} rounded-xl p-6 shadow-lg`}>
+              <h2 className={`text-xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Select Your Schedule Template
+              </h2>
+              <TemplateSelector
+                templates={templates}
+                activeTemplateId={activeTemplateId}
+                onTemplateChange={setActiveTemplateId}
+              />
+            </div>
+
+            {editMode && (
+              <div className="bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl p-4 flex items-center justify-between">
+                <div>
+                  <p className="font-semibold">Edit Mode Active</p>
+                  <p className="text-sm opacity-90">Click any block to edit, or add a new one</p>
+                </div>
+                <button
+                  onClick={() => setIsAddingBlock(true)}
+                  className="flex items-center gap-2 bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+                >
+                  <Plus className="w-5 h-5" />
+                  Add Time Block
+                </button>
+              </div>
+            )}
+
+            <div className="space-y-3">
+              {currentBlocks.map((block) => (
+                <div key={block.id} className="relative">
+                  <div onClick={() => handleBlockClick(block)}>
+                    <DailyScheduleView
+                      blocks={[block]}
+                      completedBlocks={completedBlocks}
+                      onBlockClick={handleBlockClick}
+                    />
+                  </div>
+                  {editMode && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDeleteBlock(block.id);
+                      }}
+                      className="absolute top-2 right-2 bg-red-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors z-10"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {currentView === 'progress' && (
+          <ProgressDashboard
+            blocks={currentBlocks}
+            completedBlocks={completedBlocks}
+            streak={streak}
+          />
+        )}
+
+        {currentView === 'discipline' && (
+          <div>
+            <div className="mb-4 flex justify-end">
+              <button
+                onClick={() => setShowDailyReview(true)}
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold"
+              >
+                <ClipboardCheck className="w-5 h-5" />
+                Daily Review
+              </button>
+            </div>
+            <DisciplineCode />
+          </div>
+        )}
+
+        {currentView === 'rules' && <RulesManifesto />}
+
+        {currentView === 'resources' && <ResourceLibrary resources={allResources} />}
+      </main>
+
+      {selectedBlock && !editMode && (
+        <TaskDetailModal
+          block={selectedBlock}
+          instructions={selectedBlockInstructions}
+          resources={selectedBlockResources}
+          checklistProgress={todayChecklistProgress}
+          onClose={() => setSelectedBlock(null)}
+          onChecklistToggle={handleChecklistToggle}
+          onMarkComplete={handleMarkComplete}
+        />
+      )}
+
+      {(editingBlock || isAddingBlock) && (
+        <TimeBlockEditor
+          block={editingBlock}
+          templateId={activeTemplateId}
+          onClose={() => {
+            setEditingBlock(null);
+            setIsAddingBlock(false);
+          }}
+          onSave={() => {
+            reload();
+            setEditingBlock(null);
+            setIsAddingBlock(false);
+          }}
+        />
+      )}
+
+      {showDailyReview && (
+        <DailyRuleReview onClose={() => setShowDailyReview(false)} />
+      )}
+
+      <AIScheduleAssistant
+        currentTemplate={templates.find(t => t.id === activeTemplateId)?.name || ''}
+        currentSchedule={blocks}
+        onScheduleUpdate={reload}
+      />
+    </div>
+  );
+}
+
+export default App;

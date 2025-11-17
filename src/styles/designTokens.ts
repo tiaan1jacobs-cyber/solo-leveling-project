@@ -1,0 +1,165 @@
+export const colors = {
+  primary: {
+    50: '#e6f2ff',
+    100: '#b3d9ff',
+    200: '#80bfff',
+    300: '#4da6ff',
+    400: '#1a8cff',
+    500: '#0073e6',
+    600: '#005bb3',
+    700: '#004280',
+    800: '#002a4d',
+    900: '#00121a',
+  },
+  secondary: {
+    50: '#e6f9f7',
+    100: '#b3eee7',
+    200: '#80e3d6',
+    300: '#4dd8c6',
+    400: '#1acdb5',
+    500: '#00b49c',
+    600: '#008c7a',
+    700: '#006457',
+    800: '#003c35',
+    900: '#001412',
+  },
+  success: {
+    50: '#e8f8f0',
+    100: '#c2ead5',
+    200: '#9cddba',
+    300: '#76cf9e',
+    400: '#50c283',
+    500: '#2bb574',
+    600: '#228d5a',
+    700: '#196541',
+    800: '#103d27',
+    900: '#07160e',
+  },
+  warning: {
+    50: '#fff4e6',
+    100: '#ffe0b3',
+    200: '#ffcc80',
+    300: '#ffb84d',
+    400: '#ffa41a',
+    500: '#e68a00',
+    600: '#b36b00',
+    700: '#804c00',
+    800: '#4d2d00',
+    900: '#1a0f00',
+  },
+  danger: {
+    50: '#fee',
+    100: '#fcc',
+    200: '#faa',
+    300: '#f88',
+    400: '#f66',
+    500: '#f44',
+    600: '#c33',
+    700: '#922',
+    800: '#611',
+    900: '#300',
+  },
+  neutral: {
+    50: '#f8fafc',
+    100: '#f1f5f9',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',
+    900: '#0f172a',
+  },
+};
+
+export const gradients = {
+  primary: 'bg-gradient-to-r from-blue-600 to-cyan-500',
+  secondary: 'bg-gradient-to-r from-teal-500 to-emerald-500',
+  success: 'bg-gradient-to-r from-green-500 to-teal-500',
+  warning: 'bg-gradient-to-r from-orange-500 to-amber-500',
+  danger: 'bg-gradient-to-r from-red-500 to-rose-500',
+  hero: 'bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50',
+  heroDark: 'bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900',
+};
+
+export const shadows = {
+  sm: 'shadow-sm',
+  md: 'shadow-md',
+  lg: 'shadow-lg',
+  xl: 'shadow-xl',
+  '2xl': 'shadow-2xl',
+  inner: 'shadow-inner',
+  none: 'shadow-none',
+};
+
+export const animations = {
+  fadeIn: 'animate-fade-in',
+  slideIn: 'animate-slide-in',
+  slideUp: 'animate-slide-up',
+  bounce: 'animate-bounce',
+  pulse: 'animate-pulse',
+  spin: 'animate-spin',
+};
+
+export const activityColors = {
+  meditation: {
+    bg: 'bg-purple-100',
+    text: 'text-purple-700',
+    border: 'border-purple-300',
+    gradient: 'from-purple-500 to-indigo-500',
+    hex: '#9333ea',
+  },
+  training: {
+    bg: 'bg-red-100',
+    text: 'text-red-700',
+    border: 'border-red-300',
+    gradient: 'from-red-500 to-orange-500',
+    hex: '#ef4444',
+  },
+  business: {
+    bg: 'bg-blue-100',
+    text: 'text-blue-700',
+    border: 'border-blue-300',
+    gradient: 'from-blue-500 to-cyan-500',
+    hex: '#3b82f6',
+  },
+  academic: {
+    bg: 'bg-amber-100',
+    text: 'text-amber-700',
+    border: 'border-amber-300',
+    gradient: 'from-amber-500 to-yellow-500',
+    hex: '#f59e0b',
+  },
+  personal: {
+    bg: 'bg-pink-100',
+    text: 'text-pink-700',
+    border: 'border-pink-300',
+    gradient: 'from-pink-500 to-rose-500',
+    hex: '#ec4899',
+  },
+  health: {
+    bg: 'bg-emerald-100',
+    text: 'text-emerald-700',
+    border: 'border-emerald-300',
+    gradient: 'from-emerald-500 to-teal-500',
+    hex: '#10b981',
+  },
+};
+
+export const iconSizes = {
+  xs: 'w-3 h-3',
+  sm: 'w-4 h-4',
+  md: 'w-5 h-5',
+  lg: 'w-6 h-6',
+  xl: 'w-8 h-8',
+  '2xl': 'w-10 h-10',
+  '3xl': 'w-12 h-12',
+};
+
+export const spacing = {
+  section: 'space-y-6',
+  card: 'space-y-4',
+  tight: 'space-y-2',
+  loose: 'space-y-8',
+};
