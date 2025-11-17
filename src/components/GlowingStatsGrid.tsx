@@ -90,27 +90,27 @@ const GridItem = ({ area, icon, title, description, gradient }: GridItemProps) =
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div
               className="w-fit rounded-lg border-[0.75px] p-2 bg-blue-100 border-blue-300"
-              style={{ color: '#1e40af' }}
+              style={{ color: '#3b82f6' }}
             >
               {icon}
             </div>
             <div className="space-y-3">
               <h3
                 className="pt-0.5 text-xl leading-[1.375rem] font-bold tracking-tight md:text-2xl md:leading-[1.875rem] text-balance"
-                style={{ color: '#1e3a8a', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
+                style={{ color: '#3b82f6', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
               >
                 {title}
               </h3>
               <h2
                 className="text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] font-medium"
-                style={{ color: '#1e40af', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
+                style={{ color: '#60a5fa', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
               >
                 {description}
               </h2>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-bold" style={{ color: '#1e40af', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
+          <div className="flex items-center gap-2 text-xs font-bold" style={{ color: '#60a5fa', fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}>
             <Zap className="w-3 h-3" />
             <span>Level Up System Active</span>
           </div>
