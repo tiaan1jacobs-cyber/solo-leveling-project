@@ -89,34 +89,25 @@ const GridItem = ({ area, icon, title, description, gradient }: GridItemProps) =
         >
           <div className="relative flex flex-1 flex-col justify-between gap-3">
             <div
-              className="w-fit rounded-lg border-[0.75px] p-2"
-              style={{
-                borderColor: soloLevelingTheme.border.default,
-                backgroundColor: `${soloLevelingTheme.glow.primary}20`,
-                color: soloLevelingTheme.glow.cyan,
-              }}
+              className="w-fit rounded-lg border-[0.75px] p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-cyan-400 border-blue-300 dark:border-blue-500/30"
             >
               {icon}
             </div>
             <div className="space-y-3">
               <h3
-                className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance"
-                style={{ color: soloLevelingTheme.text.primary }}
+                className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-gray-900 dark:text-white"
               >
                 {title}
               </h3>
               <h2
-                className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem]"
-                style={{ color: soloLevelingTheme.text.secondary }}
+                className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-gray-700 dark:text-gray-300"
               >
                 {description}
               </h2>
             </div>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-bold"
-            style={{ color: soloLevelingTheme.glow.secondary }}
-          >
+          <div className="flex items-center gap-2 text-xs font-bold text-purple-600 dark:text-purple-400">
             <Zap className="w-3 h-3" />
             <span>Level Up System Active</span>
           </div>
