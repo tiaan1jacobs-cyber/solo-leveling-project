@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Clock, Monitor, BookOpen, Dumbbell, Coffee, Moon, Sun, Edit2 } from 'lucide-react';
 import { weeklySchedule, DailyBlock } from '../data/militarySchedule';
 import { TimeBlockEditor } from './TimeBlockEditor';
+import { EnhancedTaskModal } from './EnhancedTaskModal';
 
 export default function MilitaryDailyView() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [editingBlock, setEditingBlock] = useState<DailyBlock | null>(null);
+  const [selectedBlock, setSelectedBlock] = useState<DailyBlock | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -112,9 +114,10 @@ export default function MilitaryDailyView() {
             const timeUntil = getTimeUntilNext(block);
 
             return (
-              <div
+              <button
                 key={block.id}
-                className={`p-4 rounded-lg border-2 transition-all ${
+                onClick={() => setSelectedBlock(block)}
+                className={`w-full p-4 rounded-lg border-2 transition-all text-left hover:scale-[1.02] ${
                   isCurrent
                     ? 'border-red-500 bg-red-950/50 shadow-lg shadow-red-900/50'
                     : getBlockColor(block.type)
@@ -144,7 +147,10 @@ export default function MilitaryDailyView() {
                         )}
                       </div>
                       <button
-                        onClick={() => setEditingBlock(block)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setEditingBlock(block);
+                        }}
                         className="text-gray-500 hover:text-red-500 transition-colors"
                       >
                         <Edit2 className="w-4 h-4" />
@@ -162,7 +168,7 @@ export default function MilitaryDailyView() {
                     )}
                   </div>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>
@@ -176,6 +182,17 @@ export default function MilitaryDailyView() {
             setEditingBlock(null);
           }}
           onCancel={() => setEditingBlock(null)}
+        />
+      )}
+
+      {selectedBlock && (
+        <EnhancedTaskModal
+          dayOfWeek={today}
+          blockId={selectedBlock.id}
+          activity={selectedBlock.activity}
+          time={selectedBlock.time}
+          endTime={selectedBlock.endTime}
+          onClose={() => setSelectedBlock(null)}
         />
       )}
     </div>
