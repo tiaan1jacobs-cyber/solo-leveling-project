@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Clock, Monitor, BookOpen, Dumbbell, Coffee, Moon, Sun, Edit2 } from 'lucide-react';
 import { weeklySchedule, DailyBlock } from '../data/militarySchedule';
-import { TimeBlockEditor } from './TimeBlockEditor';
+import { ScheduleInstructionEditor } from './ScheduleInstructionEditor';
 import { EnhancedTaskModal } from './EnhancedTaskModal';
 
 export default function MilitaryDailyView() {
@@ -175,13 +175,13 @@ export default function MilitaryDailyView() {
       </div>
 
       {editingBlock && (
-        <TimeBlockEditor
-          block={editingBlock}
-          onSave={(updated) => {
-            console.log('Saved:', updated);
+        <ScheduleInstructionEditor
+          dayOfWeek={today}
+          blockId={editingBlock.id}
+          onClose={() => setEditingBlock(null)}
+          onSave={() => {
             setEditingBlock(null);
           }}
-          onCancel={() => setEditingBlock(null)}
         />
       )}
 
