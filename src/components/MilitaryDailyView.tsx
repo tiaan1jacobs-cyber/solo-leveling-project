@@ -32,12 +32,12 @@ export default function MilitaryDailyView() {
   };
 
   const getBlockColor = (type: string) => {
-    if (type === 'da') return 'bg-red-950/50 border-red-800';
-    if (type === 'training') return 'bg-orange-950/30 border-orange-900';
-    if (type === 'class') return 'bg-blue-950/30 border-blue-900';
-    if (type === 'core') return 'bg-green-950/30 border-green-900';
-    if (type === 'recovery') return 'bg-purple-950/30 border-purple-900';
-    return 'bg-gray-900/50 border-gray-800';
+    if (type === 'da') return 'bg-red-900/60 border-red-700';
+    if (type === 'training') return 'bg-orange-900/50 border-orange-700';
+    if (type === 'class') return 'bg-blue-900/50 border-blue-700';
+    if (type === 'core') return 'bg-green-900/50 border-green-700';
+    if (type === 'recovery') return 'bg-purple-900/50 border-purple-700';
+    return 'bg-gray-800/80 border-gray-600';
   };
 
   const isCurrentBlock = (block: DailyBlock) => {
@@ -124,12 +124,12 @@ export default function MilitaryDailyView() {
                 }`}
               >
                 <div className="flex items-start gap-4">
-                  <Icon className={`w-6 h-6 flex-shrink-0 ${isCurrent ? 'text-red-500' : 'text-gray-400'}`} />
+                  <Icon className={`w-6 h-6 flex-shrink-0 ${isCurrent ? 'text-red-400' : 'text-gray-200'}`} />
 
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex items-center gap-3">
-                        <span className={`font-bold ${isCurrent ? 'text-red-500' : 'text-white'}`}>
+                        <span className={`font-bold text-base ${isCurrent ? 'text-red-400' : 'text-white'}`}>
                           {block.time} - {block.endTime}
                         </span>
                         {block.isDA && (
@@ -143,7 +143,7 @@ export default function MilitaryDailyView() {
                           </span>
                         )}
                         {timeUntil && (
-                          <span className="text-gray-500 text-sm">{timeUntil}</span>
+                          <span className="text-gray-300 text-sm font-medium">{timeUntil}</span>
                         )}
                       </div>
                       <button
@@ -151,18 +151,18 @@ export default function MilitaryDailyView() {
                           e.stopPropagation();
                           setEditingBlock(block);
                         }}
-                        className="text-gray-500 hover:text-red-500 transition-colors"
+                        className="text-gray-300 hover:text-red-400 transition-colors"
                       >
                         <Edit2 className="w-4 h-4" />
                       </button>
                     </div>
 
-                    <div className={`text-lg font-bold ${isCurrent ? 'text-white' : 'text-gray-300'}`}>
+                    <div className={`text-lg font-bold ${isCurrent ? 'text-white' : 'text-gray-100'}`}>
                       {block.activity}
                     </div>
 
                     {block.description && (
-                      <div className="text-gray-500 text-sm mt-1">
+                      <div className="text-gray-200 text-sm mt-1">
                         {block.description}
                       </div>
                     )}
