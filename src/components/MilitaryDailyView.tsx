@@ -15,6 +15,7 @@ export default function MilitaryDailyView() {
   const [customBlocks, setCustomBlocks] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [showManageMode, setShowManageMode] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,10 +35,16 @@ export default function MilitaryDailyView() {
     try {
       setLoading(true);
       const { data: { user } } = await supabase.auth.getUser();
+
       if (!user) {
+        console.log('No user logged in');
+        setIsLoggedIn(false);
         setLoading(false);
         return;
       }
+
+      console.log('User logged in:', user.id);
+      setIsLoggedIn(true);
 
       const { data, error } = await supabase
         .from('daily_schedule_blocks')
@@ -46,7 +53,12 @@ export default function MilitaryDailyView() {
         .eq('day_of_week', today)
         .order('time');
 
-      if (error) throw error;
+      if (error) {
+        console.error('Error querying schedule:', error);
+        throw error;
+      }
+
+      console.log('Custom blocks loaded:', data?.length || 0);
 
       if (data && data.length > 0) {
         setCustomBlocks(data);
@@ -216,13 +228,21 @@ export default function MilitaryDailyView() {
       </div>
 
       <div className="bg-black border-2 border-red-900 rounded-lg p-6">
+        {!isLoggedIn && (
+          <div className="mb-6 p-4 bg-yellow-900/30 border-2 border-yellow-700 rounded-lg">
+            <p className="text-yellow-300 font-bold">
+              ⚠️ You must be logged in to edit your schedule. The buttons below require authentication.
+            </p>
+          </div>
+        )}
+
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-white tracking-wider flex items-center gap-3">
             <Clock className="w-8 h-8 text-red-500" />
             DAILY SCHEDULE
           </h2>
           <div className="flex items-center gap-2">
-            {usingCustomSchedule && (
+            {usingCustomSchedule && isLoggedIn && (
               <button
                 onClick={handleResetToDefault}
                 className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white font-bold rounded-lg transition-colors text-sm"
@@ -231,27 +251,41 @@ export default function MilitaryDailyView() {
                 Reset to Default
               </button>
             )}
-            <button
-              onClick={() => setShowManageMode(!showManageMode)}
-              className={`flex items-center gap-2 px-4 py-2 font-bold rounded-lg transition-colors ${
-                showManageMode
-                  ? 'bg-red-600 hover:bg-red-700 text-white'
-                  : 'bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white'
-              }`}
-            >
-              <Edit2 className="w-4 h-4" />
-              {showManageMode ? 'Done Editing' : 'Manage Schedule'}
-            </button>
+            {isLoggedIn && (
+              <button
+                onClick={() => {
+                  console.log('Manage Schedule clicked, current mode:', showManageMode);
+                  setShowManageMode(!showManageMode);
+                }}
+                className={`flex items-center gap-2 px-4 py-2 font-bold rounded-lg transition-colors text-base ${
+                  showManageMode
+                    ? 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/50'
+                    : 'bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/50 animate-pulse'
+                }`}
+              >
+                <Edit2 className="w-5 h-5" />
+                {showManageMode ? 'Done Editing' : 'Manage Schedule'}
+              </button>
+            )}
+            {!isLoggedIn && (
+              <div className="px-4 py-2 bg-gray-800 text-gray-500 font-bold rounded-lg cursor-not-allowed">
+                <Edit2 className="w-4 h-4 inline mr-2" />
+                Login Required
+              </div>
+            )}
           </div>
         </div>
 
-        {showManageMode && (
+        {showManageMode && isLoggedIn && (
           <div className="mb-4 p-4 bg-red-950/30 border-2 border-red-900 rounded-lg">
             <p className="text-gray-300 mb-3">
               <strong className="text-white">Schedule Management Mode:</strong> Add, edit, or delete time blocks. Changes are saved to your personal schedule.
             </p>
             <button
-              onClick={() => setEditingScheduleBlock({})}
+              onClick={() => {
+                console.log('Add New Time Block clicked');
+                setEditingScheduleBlock({});
+              }}
               className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors"
             >
               <Plus className="w-4 h-4" />
@@ -308,20 +342,30 @@ export default function MilitaryDailyView() {
                           </button>
                         )}
                         <button
-                          onClick={() => setEditingBlock(block)}
+                          onClick={() => {
+                            console.log('Edit instructions clicked for block:', block.id);
+                            if (!isLoggedIn) {
+                              toast.error('You must be logged in to edit instructions');
+                              return;
+                            }
+                            setEditingBlock(block);
+                          }}
                           className="text-gray-300 hover:text-blue-400 transition-colors"
                           title="Edit instructions"
                         >
                           <Edit2 className="w-4 h-4" />
                         </button>
-                        {showManageMode && (
+                        {showManageMode && isLoggedIn && (
                           <>
                             <button
                               onClick={() => {
+                                console.log('Edit schedule block clicked for:', block.id);
                                 if (block.dbId) {
                                   const customBlock = customBlocks.find(b => b.id === block.dbId);
+                                  console.log('Editing custom block:', customBlock);
                                   setEditingScheduleBlock(customBlock);
                                 } else {
+                                  console.log('Creating new custom block from default');
                                   setEditingScheduleBlock({
                                     block_id: block.id,
                                     time: block.time,
