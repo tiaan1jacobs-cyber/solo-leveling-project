@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun, Download, Upload, Settings as SettingsIcon } from 'lucide-react';
 import { TimeBlock, ChecklistProgress } from './types';
 import { supabase } from './lib/supabase';
-import { useScheduleData } from './hooks/useScheduleData';
 import { useAuth } from './contexts/AuthContext';
 import { Login } from './components/Login';
 import { PremiumSidebar } from './components/PremiumSidebar';
@@ -31,7 +30,12 @@ type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline'
 
 function App() {
   const { user, loading: authLoading, signOut } = useAuth();
-  const { templates, blocks, instructions, allResources, loading, reload } = useScheduleData();
+  const templates: any[] = [];
+  const blocks: any[] = [];
+  const instructions: any[] = [];
+  const allResources: any[] = [];
+  const loading = false;
+  const reload = () => {};
   const [activeTemplateId, setActiveTemplateId] = useState('');
   const [completedBlocks, setCompletedBlocks] = useState<Set<string>>(new Set());
   const [checklistProgress, setChecklistProgress] = useState<ChecklistProgress[]>([]);
@@ -79,24 +83,24 @@ function App() {
     const today = new Date().toISOString().split('T')[0];
 
     const { data: progressData } = await supabase
-      .from('user_progress')
-      .select('time_block_id')
+      .from('user_block_progress')
+      .select('day_of_week, block_id')
       .eq('completion_date', today);
 
     const { data: checklistData } = await supabase
-      .from('checklist_progress')
+      .from('user_checklist_progress')
       .select('*')
       .eq('completion_date', today);
 
     if (progressData) {
-      setCompletedBlocks(new Set(progressData.map(p => p.time_block_id)));
+      setCompletedBlocks(new Set(progressData.map(p => p.block_id)));
     }
 
     if (checklistData) {
       setChecklistProgress(checklistData.map(c => ({
         id: c.id,
         userId: 'default',
-        instructionId: c.instruction_id,
+        instructionId: c.checklist_item_id,
         completionDate: c.completion_date,
         completed: c.completed,
         completedAt: c.completed_at
