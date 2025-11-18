@@ -16,7 +16,8 @@ import {
   Swords,
   Sparkles,
   Clock,
-  LogOut
+  LogOut,
+  ListChecks
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -34,7 +35,7 @@ export function PremiumSidebar({ currentView, onViewChange, collapsed, onToggleC
     { id: 'military', label: 'Military Command', icon: Swords, badge: null },
     { id: 'combat', label: 'Combat Skills', icon: Target, badge: 'NEW' },
     { id: 'affirmations', label: 'I AM Declarations', icon: Sparkles, badge: 'NEW' },
-    { id: 'tasks', label: 'Tasks', icon: Target, badge: '19' },
+    { id: 'tasks', label: 'Tasks', icon: ListChecks, badge: '19' },
     { id: 'progress', label: 'Analytics', icon: TrendingUp, badge: null },
     { id: 'ai-insights', label: 'AI Insights', icon: Brain, badge: '2' },
     { id: 'discipline', label: 'Discipline', icon: Shield, badge: '3' },
