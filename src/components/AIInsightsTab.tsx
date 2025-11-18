@@ -117,7 +117,7 @@ export function AIInsightsTab() {
 
       <Card>
         <CardBody>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
             <Activity className="w-6 h-6 text-blue-600" />
             Adaptation History
           </h3>
@@ -181,7 +181,7 @@ export function AIInsightsTab() {
 
       <Card>
         <CardBody>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
             <TrendingUp className="w-6 h-6 text-purple-600" />
             Pattern Recognition
           </h3>
@@ -224,7 +224,7 @@ export function AIInsightsTab() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <Target className="w-6 h-6 text-orange-600" />
               Optimization Breakdown
             </h3>
@@ -259,7 +259,7 @@ export function AIInsightsTab() {
 
         <Card>
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <AlertTriangle className="w-6 h-6 text-orange-600" />
               Tomorrow's Forecast
             </h3>
