@@ -91,7 +91,7 @@ export function EnhancedDisciplineTracker() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <CheckCircle2 className="w-6 h-6 text-green-600" />
-              <h3 className="font-bold text-gray-900">Rules Followed</h3>
+              <h3 className="font-bold text-blue-600">Rules Followed</h3>
             </div>
             <div className="text-3xl font-bold text-green-600">
               {20 - atRiskRules.length}/20
@@ -104,7 +104,7 @@ export function EnhancedDisciplineTracker() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <XCircle className="w-6 h-6 text-red-600" />
-              <h3 className="font-bold text-gray-900">Total Violations</h3>
+              <h3 className="font-bold text-blue-600">Total Violations</h3>
             </div>
             <div className="text-3xl font-bold text-red-600">{totalViolations}</div>
             <p className="text-sm text-gray-600 mt-1">This week</p>
@@ -115,7 +115,7 @@ export function EnhancedDisciplineTracker() {
           <CardBody>
             <div className="flex items-center gap-3 mb-2">
               <AlertTriangle className="w-6 h-6 text-orange-600" />
-              <h3 className="font-bold text-gray-900">At Risk</h3>
+              <h3 className="font-bold text-blue-600">At Risk</h3>
             </div>
             <div className="text-3xl font-bold text-orange-600">{atRiskRules.length}</div>
             <p className="text-sm text-gray-600 mt-1">Rules need attention</p>
@@ -125,7 +125,7 @@ export function EnhancedDisciplineTracker() {
 
       <Card>
         <CardBody>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
             <TrendingUp className="w-6 h-6 text-blue-600" />
             Weekly Compliance Trend
           </h3>
@@ -156,7 +156,7 @@ export function EnhancedDisciplineTracker() {
       {atRiskRules.length > 0 && (
         <Card className="border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-amber-50">
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <AlertTriangle className="w-6 h-6 text-orange-600" />
               Rules At Risk
             </h3>
@@ -278,7 +278,7 @@ export function EnhancedDisciplineTracker() {
       {mockRuleViolations.length > 0 && (
         <Card>
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <Calendar className="w-6 h-6 text-red-600" />
               Violation History
             </h3>
