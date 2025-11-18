@@ -1,0 +1,2182 @@
+# COMPLETE CHRONOLOGICAL TASK LIST
+## Full Daily Schedule with All Details - Editable Structure
+
+---
+
+## **HOW TO USE THIS DOCUMENT**
+
+This is your complete day-by-day task list in chronological order.
+
+**For Bolt Integration:**
+- Copy this entire structure into your Bolt prompt
+- Each task is a separate object you can edit
+- Change times, XP amounts, or instructions as needed
+- Add or remove tasks easily
+- Customize affirmations for yourself
+
+**Each Task Contains:**
+1. ID (unique number)
+2. Time (when to do it)
+3. Name (what it is)
+4. Duration (how long)
+5. XP Reward (how much)
+6. Stat (which character stat)
+7. Day Specific (if varies by day)
+8. Full Instructions (step-by-step)
+9. Affirmations (to say out loud)
+10. Completion Criteria (how to know you're done)
+11. Harsh Reality (motivation)
+12. Victory Message (after completion)
+
+---
+
+## **DAILY SCHEDULE OVERVIEW**
+
+### **MORNING BLOCK (6:30 AM - 8:30 AM)**
+- 6:30 AM: Wake Up Protocol
+- 6:30 AM: Cold Shower
+- 7:00 AM: Meditation + Cycling Mantras
+- 7:20 AM: Breakfast + Fuel Affirmations
+- 7:45 AM: Morning Skill Development
+
+### **WORK BLOCK (8:30 AM - 12:00 PM)**
+- 8:30 AM: DA Job Start OR Classes (day-specific)
+- Hourly Business Mantras (every hour)
+
+### **MIDDAY BLOCK (12:00 PM - 3:00 PM)**
+- 12:00 PM: Lunch + Performance Affirmations
+- 12:30 PM: Business Work (if class day) OR Continue DA
+- 2:30 PM: Pre-Tennis Warrior Mantras
+
+### **TENNIS BLOCK (3:00 PM - 5:30 PM)**
+- 3:00 PM: Tennis Practice Start
+- During: Hydration Protocol
+- 5:30 PM: Tennis Practice Complete
+
+### **EVENING BLOCK (5:30 PM - 9:30 PM)**
+- 5:30 PM: Dinner + Recovery Affirmations
+- 6:30 PM: Combat Training (day-specific)
+- 7:00/8:00 PM: DA Job OR Business Work
+
+### **NIGHT BLOCK (9:30 PM - 12:00 AM)**
+- 9:30/10:00 PM: Evening Work (day-specific)
+- 11:00 PM: Tomorrow Planning
+- 11:30 PM: Evening Reflection + Stretching
+- 11:45 PM: Bed Protocol
+- 12:00 AM: Lights Out
+
+### **ALL DAY**
+- No Porn (Zero Tolerance)
+- No Scrolling
+- Track Everything
+
+---
+
+## **COMPLETE TASK DATABASE**
+
+Copy this ENTIRE section into Bolt. Each task is fully editable.
+
+```javascript
+const DAILY_TASKS = [
+  
+  // ========================================
+  // TASK 1: WAKE UP PROTOCOL
+  // ========================================
+  {
+    id: 1,
+    time: "6:30 AM",
+    name: "Wake Up Protocol",
+    duration: "5 minutes",
+    xpReward: 20,
+    stat: "mental",
+    category: "morning",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Wake up immediately. No negotiation.",
+      steps: [
+        {
+          step: 1,
+          title: "ALARM SOUNDS",
+          details: [
+            "Alarm goes off at 6:30 AM",
+            "Eyes open immediately",
+            "NO snooze button",
+            "NO 'just 5 more minutes'",
+            "NO negotiation"
+          ]
+        },
+        {
+          step: 2,
+          title: "IMMEDIATE ACTION",
+          details: [
+            "Throw covers off",
+            "Swing legs out of bed",
+            "Plant feet on floor",
+            "STAND UP within 5 seconds",
+            "Count: 1... 2... 3... 4... 5... UP!"
+          ]
+        },
+        {
+          step: 3,
+          title: "CORE DECLARATIONS (SAY OUT LOUD)",
+          details: [
+            "Stand straight, shoulders back, voice LOUD and clear"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM a warrior in complete control of my mind and body",
+      "I AM disciplined beyond what others think is possible",
+      "I AM building an empire while others sleep",
+      "I AM earning $5,000 per month through my AI business",
+      "I AM a Templar - discipline is my worship",
+      "I AM unstoppable in my pursuit of mastery",
+      "I AM the man who keeps every promise to himself"
+    ],
+    
+    completionCriteria: [
+      "Woke at 6:30 AM (no snooze)",
+      "Stood up within 5 seconds",
+      "Said all 7 declarations OUT LOUD"
+    ],
+    
+    harshReality: "The snooze button is training yourself to break promises. Every morning you negotiate with yourself is practice for negotiating all day. Your first decision sets the tone for every decision that follows. Winners don't negotiate with themselves.",
+    
+    victoryMessage: "🔥 VICTORY: You dominated the first test of the day. Most men lost this battle. You won. Momentum is yours.",
+    
+    penalty: {
+      violation: "Snoozed or woke late",
+      consequences: [
+        "50 burpees immediately",
+        "No breakfast until burpees complete",
+        "Lose Mental Fortress XP for the day",
+        "Next morning wake at 6:00 AM (30 min earlier)",
+        "Write why you're choosing comfort over victory"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 2: COLD SHOWER
+  // ========================================
+  {
+    id: 2,
+    time: "6:30 AM",
+    name: "Cold Shower Protocol",
+    duration: "3 minutes",
+    xpReward: 10,
+    stat: "mental",
+    category: "morning",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Master discomfort. 3 minutes coldest water.",
+      steps: [
+        {
+          step: 1,
+          title: "PREPARATION",
+          details: [
+            "Go directly to bathroom (no delays)",
+            "Turn shower to COLDEST setting",
+            "No warm water first - start cold",
+            "Strip down",
+            "Take deep breath"
+          ]
+        },
+        {
+          step: 2,
+          title: "ENTRY",
+          details: [
+            "Step under water immediately",
+            "Full body under stream",
+            "Don't ease in - commit fully",
+            "Control your breathing"
+          ]
+        },
+        {
+          step: 3,
+          title: "MANTRAS (Say 3 times WHILE in cold water)",
+          details: [
+            "Say these OUT LOUD while water hits you"
+          ]
+        },
+        {
+          step: 4,
+          title: "TIMER",
+          details: [
+            "Stay under cold water for FULL 3 minutes",
+            "Use timer/stopwatch"
+          ]
+        },
+        {
+          step: 5,
+          title: "BREATHING",
+          details: [
+            "Deep breath in through nose (4 seconds)",
+            "Hold (2 seconds)",
+            "Exhale through mouth (6 seconds)",
+            "Repeat - stay calm"
+          ]
+        },
+        {
+          step: 6,
+          title: "COMPLETION",
+          details: [
+            "Timer hits 3:00",
+            "Turn off water",
+            "Exit with pride",
+            "Say: 'I AM victorious'"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM mastering discomfort",
+      "I AM forging unbreakable willpower",
+      "I AM in complete control",
+      "I AM strengthening my mind with every second"
+    ],
+    
+    completionCriteria: [
+      "Water was COLDEST setting (no warm)",
+      "Full 3 minutes completed",
+      "Said all 4 mantras 3 times OUT LOUD",
+      "Controlled breathing throughout"
+    ],
+    
+    harshReality: "Discomfort is where growth lives. Warriors embrace what civilians avoid. Your ability to do hard things when you don't want to is the only thing that separates you from mediocrity. This is willpower training disguised as a shower.",
+    
+    victoryMessage: "🔥 VICTORY: You chose discomfort over comfort. Warriors are forged in cold water. You're getting stronger.",
+    
+    penalty: {
+      violation: "Skipped or used warm water",
+      consequences: [
+        "No hot water for 3 days (cold only)",
+        "100 burpees",
+        "Lose Mental Fortress XP for the day",
+        "Must do 5-minute cold shower next day"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 3: MEDITATION + CYCLING MANTRAS
+  // ========================================
+  {
+    id: 3,
+    time: "7:00 AM",
+    name: "Meditation + Cycling Mantras",
+    duration: "20 minutes",
+    xpReward: 10,
+    stat: "mental",
+    category: "morning",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Build mental clarity through meditation and identity programming.",
+      steps: [
+        {
+          step: 1,
+          title: "SETUP",
+          details: [
+            "Find quiet space",
+            "Sit in comfortable position (chair or floor)",
+            "Back straight, shoulders relaxed",
+            "Hands resting on knees or lap",
+            "Close eyes",
+            "Set timer for 20 minutes"
+          ]
+        },
+        {
+          step: 2,
+          title: "BREATHING",
+          details: [
+            "Breathe naturally through nose",
+            "Notice breath without controlling it",
+            "Focus on sensation of air",
+            "When mind wanders, return to breath"
+          ]
+        },
+        {
+          step: 3,
+          title: "CYCLING MANTRAS (Every 2 minutes)",
+          details: [
+            "Timer will alert every 2 minutes to cycle",
+            "Say each mantra silently in your mind with each breath"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      {time: "0-2 min", mantra: "I AM focused"},
+      {time: "2-4 min", mantra: "I AM disciplined"},
+      {time: "4-6 min", mantra: "I AM dangerous"},
+      {time: "6-8 min", mantra: "I AM relentless"},
+      {time: "8-10 min", mantra: "I AM elite"},
+      {time: "10-12 min", mantra: "I AM unstoppable"},
+      {time: "12-14 min", mantra: "I AM a weapon"},
+      {time: "14-16 min", mantra: "I AM strategic"},
+      {time: "16-18 min", mantra: "I AM BECOMING"},
+      {time: "18-20 min", mantra: "I AM ready"}
+    ],
+    
+    completionCriteria: [
+      "Full 20 minutes completed",
+      "Cycled through all 10 mantras",
+      "Maintained focus (mostly)",
+      "Ended with 'I AM ready for today'"
+    ],
+    
+    harshReality: "This isn't just meditation - it's identity programming. Every mantra reinforces who you are becoming. Your subconscious mind is listening. You're training neural pathways. This 20 minutes shapes your entire day.",
+    
+    victoryMessage: "🔥 VICTORY: You programmed your mind for dominance. 20 minutes of focus while others scroll. Mental fortress strengthened.",
+    
+    penalty: {
+      violation: "Skipped or incomplete",
+      consequences: [
+        "50 burpees",
+        "Lose Mental Fortress XP",
+        "Must do 30 minutes next day",
+        "No phone for 3 hours"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 4: BREAKFAST + FUEL AFFIRMATIONS
+  // ========================================
+  {
+    id: 4,
+    time: "7:20 AM",
+    name: "Breakfast + Fuel Affirmations",
+    duration: "20 minutes",
+    xpReward: 10,
+    stat: "mental",
+    category: "morning",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Fuel your warrior body with purpose.",
+      steps: [
+        {
+          step: 1,
+          title: "MEAL PREPARATION",
+          details: [
+            "Choose ONE optimized breakfast option"
+          ],
+          options: [
+            {
+              name: "OPTION A: Protein Power",
+              items: [
+                "3-4 whole eggs (scrambled or fried)",
+                "2 slices whole grain toast",
+                "1 cup oatmeal with berries",
+                "Black coffee or green tea"
+              ]
+            },
+            {
+              name: "OPTION B: Quick Warrior",
+              items: [
+                "Protein shake (30g protein)",
+                "Banana",
+                "Handful of nuts",
+                "Black coffee"
+              ]
+            },
+            {
+              name: "OPTION C: Champion's Breakfast",
+              items: [
+                "3-egg omelet with vegetables",
+                "Greek yogurt with granola",
+                "Orange juice",
+                "Black coffee"
+              ]
+            }
+          ]
+        },
+        {
+          step: 2,
+          title: "FIREBLOOD SUPPLEMENT",
+          details: [
+            "Take 1 serving of Fireblood (as directed)",
+            "With first bites of food",
+            "Full glass of water"
+          ]
+        },
+        {
+          step: 3,
+          title: "FUEL AFFIRMATIONS (Before eating)",
+          details: [
+            "Stand or sit with food in front of you",
+            "Say these OUT LOUD"
+          ]
+        },
+        {
+          step: 4,
+          title: "MINDFUL EATING",
+          details: [
+            "Sit down to eat (no standing)",
+            "No phone scrolling",
+            "No TV or distractions",
+            "Chew thoroughly",
+            "Taste your food",
+            "Eat with purpose and gratitude"
+          ]
+        },
+        {
+          step: 5,
+          title: "HYDRATION",
+          details: [
+            "Drink 16 oz (500mL) water with meal",
+            "No sugary drinks",
+            "Black coffee is fine"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "This food is fuel for my warrior body",
+      "I AM feeding elite performance",
+      "I AM building strength with every bite",
+      "I AM optimized for domination",
+      "This meal supports my $5,000/month business",
+      "I AM fueling my ascent to apex"
+    ],
+    
+    completionCriteria: [
+      "Ate complete breakfast (protein + carbs)",
+      "Took Fireblood supplement",
+      "Said all 6 fuel affirmations OUT LOUD",
+      "Ate mindfully (no phone)",
+      "Drank 16 oz water"
+    ],
+    
+    harshReality: "Nutrition is not optional for elite performance. Your body is a weapon - you must maintain it. Every meal is either bringing you closer to apex or holding you back. Warriors eat with purpose.",
+    
+    victoryMessage: "🔥 VICTORY: You fueled your body like a champion. Fireblood activated. Energy optimized. Ready to dominate.",
+    
+    penalty: {
+      violation: "Skipped or ate junk",
+      consequences: [
+        "50 burpees",
+        "Lose Physical Weapon XP",
+        "No snacks for 2 days",
+        "Extra 30 min cardio"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 5: MORNING SKILL DEVELOPMENT
+  // ========================================
+  {
+    id: 5,
+    time: "7:45 AM",
+    name: "Morning Skill Development",
+    duration: "45 minutes",
+    xpReward: 10,
+    stat: "intelligence",
+    category: "morning",
+    daySpecific: true,
+    required: true,
+    
+    dayVariations: {
+      monday: {
+        focus: "Intelligence Operative Training",
+        activities: [
+          "Complete 2-3 daily intelligence quests",
+          "Practice observation skills",
+          "Memory exercises",
+          "Situational awareness drills"
+        ]
+      },
+      tuesday: {
+        focus: "Academic Work (Before Classes)",
+        activities: [
+          "Review class notes",
+          "Prepare for today's classes",
+          "Complete homework",
+          "Study for upcoming tests"
+        ]
+      },
+      wednesday: {
+        focus: "Intelligence Operative Training",
+        activities: [
+          "Complete 2-3 daily intelligence quests",
+          "OSINT research practice",
+          "Pattern recognition exercises",
+          "Counter-surveillance awareness"
+        ]
+      },
+      thursday: {
+        focus: "Academic Work (Before Classes)",
+        activities: [
+          "Review class notes",
+          "Prepare for today's classes",
+          "Complete homework",
+          "Study for upcoming tests"
+        ]
+      },
+      friday: {
+        focus: "Intelligence Operative Training",
+        activities: [
+          "Complete 2-3 daily intelligence quests",
+          "Surveillance detection practice",
+          "Memory palace technique",
+          "Baseline behavior analysis"
+        ]
+      },
+      saturday: {
+        focus: "Business Strategy",
+        activities: [
+          "Review week's business performance",
+          "Plan next week's lead generation",
+          "Research new automation strategies",
+          "Improve chatbot offerings"
+        ]
+      },
+      sunday: {
+        focus: "Intelligence Operative Training + Weekly Review",
+        activities: [
+          "Complete intelligence quests",
+          "Review full week of progress",
+          "Plan next week's objectives",
+          "Adjust strategies based on results"
+        ]
+      }
+    },
+    
+    instructions: {
+      title: "Develop elite skills every morning.",
+      steps: [
+        {
+          step: 1,
+          title: "CHECK TODAY'S FOCUS",
+          details: [
+            "Identify what day it is",
+            "Read today's specific activities",
+            "Set 45-minute timer"
+          ]
+        },
+        {
+          step: 2,
+          title: "SKILL WORK AFFIRMATIONS",
+          details: [
+            "Before starting, say these OUT LOUD"
+          ]
+        },
+        {
+          step: 3,
+          title: "EXECUTE FOCUSED WORK",
+          details: [
+            "No distractions",
+            "Phone in airplane mode",
+            "Complete assigned activities",
+            "Track progress in detail"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM investing in skills that compound",
+      "I AM building capabilities that create opportunities",
+      "I AM the man who develops elite abilities",
+      "I AM sharpening my competitive edge daily"
+    ],
+    
+    completionCriteria: [
+      "Full 45 minutes of focused work",
+      "Completed day-specific activities",
+      "No phone distractions",
+      "Documented what was learned"
+    ],
+    
+    harshReality: "Skills compound. Every morning you skip is knowledge your competition gains while you stay stagnant. Elite operators develop elite skills daily. This 45 minutes separates professionals from amateurs.",
+    
+    victoryMessage: "🔥 VICTORY: You invested in yourself while others scrolled. Skills developed. Intelligence increased. Competitive advantage extended.",
+    
+    penalty: {
+      violation: "Skipped or wasted time",
+      consequences: [
+        "100 burpees",
+        "Lose Intelligence Operative XP",
+        "Must do 90 minutes tomorrow",
+        "Document wasted time in writing"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 6: DA JOB / CLASSES START
+  // ========================================
+  {
+    id: 6,
+    time: "8:30 AM",
+    name: "DA Job Start / Classes",
+    duration: "3.5 hours (varies by day)",
+    xpReward: 20,
+    stat: "business",
+    category: "work",
+    daySpecific: true,
+    required: true,
+    
+    dayVariations: {
+      monday: {
+        activity: "DA Job - Productive Work",
+        schedule: "8:30 AM - 12:00 PM",
+        focus: "Business development, lead generation, email outreach"
+      },
+      tuesday: {
+        activity: "Classes",
+        schedule: "8:30 AM - 12:00 PM",
+        courses: ["French", "Entrepreneurship", "Personal Finance"]
+      },
+      wednesday: {
+        activity: "DA Job - Productive Work",
+        schedule: "8:30 AM - 12:00 PM",
+        focus: "Client work, chatbot development, business systems"
+      },
+      thursday: {
+        activity: "Classes",
+        schedule: "8:30 AM - 12:00 PM",
+        courses: ["French", "Entrepreneurship", "Personal Finance"]
+      },
+      friday: {
+        activity: "DA Job - Productive Work",
+        schedule: "8:30 AM - 12:00 PM",
+        focus: "Weekly review, client follow-ups, business planning"
+      },
+      saturday: {
+        activity: "Business Deep Work",
+        schedule: "8:30 AM - 12:00 PM",
+        focus: "Major projects, system building, strategy"
+      },
+      sunday: {
+        activity: "Intelligence Training / Planning",
+        schedule: "8:30 AM - 12:00 PM",
+        focus: "Weekly review, next week planning, skill development"
+      }
+    },
+    
+    instructions: {
+      title: "Use every minute productively.",
+      steps: [
+        {
+          step: 1,
+          title: "START OF SHIFT/CLASS AFFIRMATIONS",
+          details: [
+            "Before sitting down, say these OUT LOUD"
+          ]
+        },
+        {
+          step: 2,
+          title: "HOURLY BUSINESS MANTRAS",
+          details: [
+            "Every hour on the hour (9:30, 10:30, 11:30)",
+            "Stand up, say these OUT LOUD",
+            "2-minute break only"
+          ]
+        },
+        {
+          step: 3,
+          title: "PRODUCTIVITY TRACKING",
+          details: [
+            "Log what you accomplish each hour",
+            "Track leads generated / work completed",
+            "No YouTube, Reddit, or scrolling",
+            "Business work or academic work ONLY"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM building my empire during paid time",
+      "I AM using every minute strategically",
+      "I AM turning time into money",
+      "I AM productive beyond what others think possible"
+    ],
+    
+    hourlyMantras: [
+      "I AM focused on what matters",
+      "I AM executing at elite levels",
+      "I AM building while others waste time"
+    ],
+    
+    completionCriteria: [
+      "Full time block used productively",
+      "Hourly mantras said on time",
+      "No scrolling or distractions",
+      "Work logged and documented"
+    ],
+    
+    harshReality: "You're being PAID to sit at a computer. While everyone else wastes this time, you're building an empire. 3.5 hours × 5 days = 17.5 hours per week. That's 910 hours per year. You can build ANYTHING with 910 focused hours.",
+    
+    victoryMessage: "🔥 VICTORY: You turned paid time into empire-building time. Leads generated. Progress made. Competition left behind.",
+    
+    penalty: {
+      violation: "Wasted time on scrolling/games",
+      consequences: [
+        "200 burpees after work",
+        "Lose all Business Warrior XP for that day",
+        "Must stay 30 min extra next shift",
+        "Document every hour of next shift",
+        "Write 500 words on wasted potential"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 7: LUNCH + PERFORMANCE AFFIRMATIONS
+  // ========================================
+  {
+    id: 7,
+    time: "12:00 PM",
+    name: "Lunch + Performance Affirmations",
+    duration: "30 minutes",
+    xpReward: 10,
+    stat: "physical",
+    category: "midday",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Strategic nutrition for afternoon dominance.",
+      steps: [
+        {
+          step: 1,
+          title: "MEAL SELECTION",
+          details: [
+            "Choose high-protein, moderate-carb meal",
+            "Examples: Chicken + rice, Steak + sweet potato, Salmon + quinoa",
+            "Avoid heavy, sleep-inducing foods",
+            "Include vegetables for micronutrients"
+          ]
+        },
+        {
+          step: 2,
+          title: "CREATINE SUPPLEMENT",
+          details: [
+            "Take 5g creatine monohydrate",
+            "With lunch",
+            "Full glass of water"
+          ]
+        },
+        {
+          step: 3,
+          title: "PERFORMANCE AFFIRMATIONS",
+          details: [
+            "Before eating, say these OUT LOUD"
+          ]
+        },
+        {
+          step: 4,
+          title: "HYDRATION",
+          details: [
+            "Drink 20 oz (600mL) water with meal",
+            "No soda or sugary drinks"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "This meal powers my tennis dominance",
+      "I AM fueling elite athletic performance",
+      "I AM preventing cramps through smart nutrition",
+      "I AM optimized for 2.5 hours of intensity",
+      "I AM feeding my competitive advantage"
+    ],
+    
+    completionCriteria: [
+      "Ate complete lunch (protein + carbs + vegetables)",
+      "Took creatine supplement",
+      "Said all performance affirmations OUT LOUD",
+      "Drank 20 oz water",
+      "Ate mindfully (no phone)"
+    ],
+    
+    harshReality: "Your afternoon performance is determined by your lunch choices. Champions fuel strategically. You have 2.5 hours of intense tennis coming. This meal either supports that or sabotages it. Choose wisely.",
+    
+    victoryMessage: "🔥 VICTORY: Strategically fueled. Creatine loaded. Hydrated. Ready for tennis domination.",
+    
+    penalty: {
+      violation: "Skipped or ate junk food",
+      consequences: [
+        "50 burpees",
+        "Lose Physical Weapon XP",
+        "No dessert for 7 days",
+        "Extra hydration requirements"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 8: BUSINESS WORK (If Class Day)
+  // ========================================
+  {
+    id: 8,
+    time: "12:30 PM",
+    name: "Business Development Work",
+    duration: "2 hours",
+    xpReward: 20,
+    stat: "business",
+    category: "midday",
+    daySpecific: true,
+    onlyOnDays: ["tuesday", "thursday"],
+    required: true,
+    
+    instructions: {
+      title: "Build your $5K/month business.",
+      steps: [
+        {
+          step: 1,
+          title: "PRIORITY TASKS",
+          details: [
+            "Lead generation (target: 10+ leads)",
+            "Cold email outreach (target: 5+ emails)",
+            "Follow-up with prospects",
+            "Chatbot development/improvement",
+            "Client work if applicable"
+          ]
+        },
+        {
+          step: 2,
+          title: "BUSINESS WARRIOR MANTRAS",
+          details: [
+            "Before starting, say these OUT LOUD"
+          ]
+        },
+        {
+          step: 3,
+          title: "TRACKING",
+          details: [
+            "Log all leads generated",
+            "Track all emails sent",
+            "Document all calls made",
+            "Record revenue/progress"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM building a $5,000/month business",
+      "I AM providing massive value",
+      "I AM a closer who turns leads into revenue",
+      "I AM executing while others plan",
+      "I AM earning freedom through focused work"
+    ],
+    
+    completionCriteria: [
+      "Full 2 hours of focused business work",
+      "Hit lead generation targets",
+      "All outreach documented",
+      "Progress toward $5K/month tracked"
+    ],
+    
+    harshReality: "Every hour of business work is worth $50-100 in future revenue. Someone else is working on their business right now. They're getting ahead. You're either closing the gap or falling further behind. Execute.",
+    
+    victoryMessage: "🔥 VICTORY: Leads generated. Emails sent. Revenue pipeline growing. $5K/month closer. Empire building.",
+    
+    penalty: {
+      violation: "Wasted time or didn't work",
+      consequences: [
+        "200 burpees",
+        "Lose all Business Warrior XP",
+        "Must work 4 hours on Sunday",
+        "Write business plan for next week"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 9: PRE-TENNIS WARRIOR MANTRAS
+  // ========================================
+  {
+    id: 9,
+    time: "2:30 PM",
+    name: "Pre-Tennis Warrior Mantras",
+    duration: "10 minutes",
+    xpReward: 5,
+    stat: "athletic",
+    category: "tennis",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Mental preparation for battle.",
+      steps: [
+        {
+          step: 1,
+          title: "HYDRATION START",
+          details: [
+            "Drink 500mL sports drink slowly",
+            "Sip over 10 minutes",
+            "Must contain 400-600mg sodium"
+          ]
+        },
+        {
+          step: 2,
+          title: "WARRIOR MANTRAS",
+          details: [
+            "Stand, shoulders back",
+            "Say these OUT LOUD with power"
+          ]
+        },
+        {
+          step: 3,
+          title: "VISUALIZATION",
+          details: [
+            "Close eyes for 2 minutes",
+            "Visualize perfect technique",
+            "See yourself dominating",
+            "Feel the confidence"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM a tennis warrior",
+      "I AM cramp-free and unstoppable",
+      "I AM technically superior",
+      "I AM mentally unbreakable",
+      "I AM dominating for 2.5 hours",
+      "I AM the best player on this court"
+    ],
+    
+    completionCriteria: [
+      "Drank 500mL sports drink",
+      "Said all warrior mantras OUT LOUD",
+      "Completed 2-minute visualization",
+      "Mentally ready for practice"
+    ],
+    
+    harshReality: "Mental preparation separates champions from amateurs. You're not just practicing tennis - you're becoming elite. This 10 minutes programs your nervous system for peak performance.",
+    
+    victoryMessage: "🔥 VICTORY: Mind prepared. Body fueled. Warrior mode activated. Court is yours.",
+    
+    penalty: {
+      violation: "Skipped preparation",
+      consequences: [
+        "50 burpees before tennis",
+        "Extra 30 minutes practice",
+        "Lose Athletic Dominance XP"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 10: TENNIS PRACTICE
+  // ========================================
+  {
+    id: 10,
+    time: "3:00 PM - 5:30 PM",
+    name: "Tennis Practice",
+    duration: "2.5 hours",
+    xpReward: 30,
+    stat: "athletic",
+    category: "tennis",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Daily practice. No exceptions. No excuses.",
+      steps: [
+        {
+          step: 1,
+          title: "WARM-UP (10 minutes)",
+          details: [
+            "Light jogging",
+            "Dynamic stretching",
+            "Arm circles",
+            "Practice swings",
+            "Mental focus"
+          ]
+        },
+        {
+          step: 2,
+          title: "TECHNICAL WORK (60 minutes)",
+          details: [
+            "Groundstrokes (forehand/backhand): 20 min",
+            "Serves: 20 min",
+            "Volleys: 10 min",
+            "Footwork drills: 10 min"
+          ]
+        },
+        {
+          step: 3,
+          title: "MATCH PLAY / POINTS (60 minutes)",
+          details: [
+            "Practice matches",
+            "Point play",
+            "Competitive situations",
+            "Mental toughness training"
+          ]
+        },
+        {
+          step: 4,
+          title: "COOL DOWN (10 minutes)",
+          details: [
+            "Light hitting",
+            "Static stretching",
+            "Breathing exercises"
+          ]
+        },
+        {
+          step: 5,
+          title: "HYDRATION PROTOCOL (During entire practice)",
+          details: [
+            "Drink 500-700mL per hour",
+            "Every 15-20 min: 3-4 big sips",
+            "Sports drink with sodium",
+            "Track total fluid intake"
+          ]
+        }
+      ]
+    },
+    
+    mentalResets: [
+      "Between games: 'I AM focused'",
+      "After errors: 'I AM learning'",
+      "During fatigue: 'I AM strong'",
+      "Facing challenge: 'I AM ready'"
+    ],
+    
+    completionCriteria: [
+      "Full 2.5 hours completed",
+      "All practice segments done",
+      "Hydration protocol followed",
+      "Mental resets used throughout",
+      "Maximum effort given"
+    ],
+    
+    harshReality: "Champions don't feel like it either. They show up anyway. Every time you skip, you're programming yourself to be unreliable. Your body doesn't get to vote. You decided this matters, so act like it. The competition is training. Are you?",
+    
+    victoryMessage: "🔥 VICTORY: 2.5 hours of dominance. Most quit. You didn't. Skill increased. Mental toughness proven. Champion's work complete.",
+    
+    penalty: {
+      violation: "Skipped practice",
+      consequences: [
+        "100 burpees immediately",
+        "Double practice next day (5 hours)",
+        "Lose ALL Athletic Dominance XP for the week",
+        "Write 500 words on why you're a quitter",
+        "Reset training streak to zero"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 11: DINNER + RECOVERY AFFIRMATIONS
+  // ========================================
+  {
+    id: 11,
+    time: "5:30 PM",
+    name: "Dinner + Recovery Affirmations",
+    duration: "30 minutes",
+    xpReward: 10,
+    stat: "physical",
+    category: "evening",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Post-training recovery fuel.",
+      steps: [
+        {
+          step: 1,
+          title: "MEAL COMPOSITION",
+          details: [
+            "High protein (40-50g): Chicken, steak, fish, or tofu",
+            "Complex carbs: Rice, pasta, potatoes, or quinoa",
+            "Vegetables: Mixed vegetables for recovery",
+            "Healthy fats: Avocado, olive oil, or nuts"
+          ]
+        },
+        {
+          step: 2,
+          title: "POST-TENNIS HYDRATION",
+          details: [
+            "Weigh yourself if possible",
+            "Lost 2 lbs = drink 32 oz water",
+            "Minimum 500mL immediate water",
+            "Continue hydrating throughout evening"
+          ]
+        },
+        {
+          step: 3,
+          title: "RECOVERY AFFIRMATIONS",
+          details: [
+            "Before eating, say these OUT LOUD"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "This meal rebuilds my warrior body",
+      "I AM recovering to perform again tomorrow",
+      "I AM feeding muscle growth and repair",
+      "I AM optimizing testosterone and energy",
+      "I AM earning tomorrow's dominance through today's recovery"
+    ],
+    
+    completionCriteria: [
+      "Complete dinner with protein + carbs + vegetables",
+      "Post-tennis hydration protocol followed",
+      "Said all recovery affirmations OUT LOUD",
+      "Ate mindfully and completely"
+    ],
+    
+    harshReality: "Recovery is when growth happens. Training breaks you down, nutrition builds you back up stronger. Half-ass recovery = half-ass results. Champions eat for performance, not just taste.",
+    
+    victoryMessage: "🔥 VICTORY: Body fueled for recovery. Hydration restored. Ready for tonight's combat training. Recovery optimized.",
+    
+    penalty: {
+      violation: "Skipped or ate junk",
+      consequences: [
+        "50 burpees",
+        "Lose Physical Weapon XP",
+        "No snacks for 3 days",
+        "Extra hydration tracking required"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 12: COMBAT TRAINING (Day-Specific)
+  // ========================================
+  {
+    id: 12,
+    time: "6:30 PM",
+    name: "Combat Training",
+    duration: "60-90 minutes (varies by day)",
+    xpReward: 30,
+    stat: "combat",
+    category: "evening",
+    daySpecific: true,
+    required: true,
+    
+    dayVariations: {
+      monday: {
+        focus: "Weapons Training",
+        location: "Warrior Spirit MMA / Home",
+        duration: "60 minutes",
+        training: [
+          "Staff/stick basics: 15 min",
+          "Knife defense fundamentals: 15 min",
+          "Improvised weapons: 15 min",
+          "Weapon retention drills: 15 min"
+        ],
+        affirmations: [
+          "I AM dangerous with any weapon",
+          "I AM learning tools of protection",
+          "I AM the armed warrior"
+        ]
+      },
+      tuesday: {
+        focus: "Striking (Boxing)",
+        location: "Carolina Boxing Club",
+        duration: "90 minutes",
+        training: [
+          "Warm-up / Jump rope: 10 min",
+          "Shadow boxing: 3 rounds",
+          "Heavy bag work: 5 rounds",
+          "Mitt work with coach: 4 rounds",
+          "Conditioning: 10 min"
+        ],
+        affirmations: [
+          "I AM a precision striker",
+          "I AM developing knockout power",
+          "I AM boxing like a professional"
+        ]
+      },
+      wednesday: {
+        focus: "Recovery / Light Movement",
+        location: "Home / Park",
+        duration: "30 minutes",
+        training: [
+          "Light shadowboxing: 10 min",
+          "Mobility work: 10 min",
+          "Breathing exercises: 5 min",
+          "Visualization: 5 min"
+        ],
+        affirmations: [
+          "I AM recovering strategically",
+          "I AM preparing for tomorrow's intensity",
+          "I AM smart about long-term development"
+        ]
+      },
+      thursday: {
+        focus: "Grappling (BJJ)",
+        location: "Gracie Barra Columbia",
+        duration: "90 minutes",
+        training: [
+          "Warm-up / Shrimping: 10 min",
+          "Technique instruction: 30 min",
+          "Positional drilling: 20 min",
+          "Live rolling: 20 min",
+          "Cool down: 10 min"
+        ],
+        affirmations: [
+          "I AM mastering ground control",
+          "I AM dangerous from any position",
+          "I AM a submission threat"
+        ]
+      },
+      friday: {
+        focus: "Heavy Duty Strength Training",
+        location: "Iron District Gym / Gold's Gym",
+        duration: "45 minutes",
+        training: [
+          "Workout A or B (alternating)",
+          "1 set to failure per exercise",
+          "Maximum intensity",
+          "Perfect form only"
+        ],
+        workouts: {
+          A: [
+            "Barbell Squat: 1 set to failure",
+            "Barbell Bench Press: 1 set to failure",
+            "Barbell Row: 1 set to failure",
+            "Overhead Press: 1 set to failure"
+          ],
+          B: [
+            "Deadlift: 1 set to failure",
+            "Pull-ups/Lat Pulldown: 1 set to failure",
+            "Dips: 1 set to failure",
+            "Barbell Curl: 1 set to failure"
+          ]
+        },
+        affirmations: [
+          "I AM building functional strength",
+          "I AM growing stronger with maximum intensity",
+          "I AM a physical weapon"
+        ]
+      },
+      saturday: {
+        focus: "MMA Integration",
+        location: "Warrior Spirit MMA",
+        duration: "2.5 hours (12:30-3:00 PM)",
+        training: [
+          "Warm-up: 15 min",
+          "Striking combinations: 30 min",
+          "Takedowns: 30 min",
+          "Ground positions: 30 min",
+          "Sparring (striking + grappling): 30 min",
+          "Conditioning: 15 min"
+        ],
+        affirmations: [
+          "I AM integrating all ranges",
+          "I AM becoming a complete fighter",
+          "I AM dangerous anywhere the fight goes"
+        ]
+      },
+      sunday: {
+        focus: "Active Recovery / Skill Review",
+        location: "Home",
+        duration: "45 minutes",
+        training: [
+          "Shadow boxing (slow, technical): 15 min",
+          "Grappling solo drills: 15 min",
+          "Mobility and stretching: 15 min"
+        ],
+        affirmations: [
+          "I AM reviewing and refining",
+          "I AM smart about recovery",
+          "I AM preparing for next week's intensity"
+        ]
+      }
+    },
+    
+    instructions: {
+      title: "Become dangerous through systematic training.",
+      steps: [
+        {
+          step: 1,
+          title: "PRE-TRAINING DECLARATIONS",
+          details: [
+            "Before training, say these OUT LOUD",
+            "Use day-specific affirmations"
+          ]
+        },
+        {
+          step: 2,
+          title: "EXECUTE TRAINING",
+          details: [
+            "Follow day-specific training plan",
+            "Maximum effort and focus",
+            "Perfect technique over ego lifting",
+            "Ask questions and learn"
+          ]
+        },
+        {
+          step: 3,
+          title: "TRAINING LOG",
+          details: [
+            "Document what you trained",
+            "Note techniques learned",
+            "Record sparring rounds",
+            "Track strength numbers (if applicable)",
+            "Write observations and improvements"
+          ]
+        }
+      ]
+    },
+    
+    completionCriteria: [
+      "Full training session completed",
+      "Pre-training affirmations said",
+      "Maximum effort given",
+      "Training logged in detail"
+    ],
+    
+    harshReality: "You're training to be dangerous. Dangerous men don't skip. The opponent who shows up daily beats the talented guy who shows up sometimes. Every session you miss is your competition getting sharper while you get softer. No excuses.",
+    
+    victoryMessage: "🔥 VICTORY: Training complete. Skills sharpened. Danger level increased. Warriors work while others rest. You're one of the warriors.",
+    
+    penalty: {
+      violation: "Skipped training",
+      consequences: [
+        "200 burpees before bed",
+        "Lose all Combat Mastery XP for the week",
+        "Extra session on Sunday",
+        "Write why you're choosing to be weak",
+        "Restart training progression"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 13: EVENING DA JOB / BUSINESS WORK
+  // ========================================
+  {
+    id: 13,
+    time: "7:00 PM / 8:00 PM",
+    name: "Evening Work Block",
+    duration: "1-2 hours (varies by day)",
+    xpReward: 20,
+    stat: "business",
+    category: "evening",
+    daySpecific: true,
+    required: true,
+    
+    dayVariations: {
+      monday: {
+        time: "7:00 PM - 8:00 PM",
+        activity: "DA Job",
+        focus: "Business work on computer"
+      },
+      tuesday: {
+        time: "8:00 PM - 9:00 PM",
+        activity: "DA Job",
+        focus: "Academic work / Study"
+      },
+      wednesday: {
+        time: "7:00 PM - 8:00 PM",
+        activity: "DA Job",
+        focus: "Business work on computer"
+      },
+      thursday: {
+        time: "8:00 PM - 9:00 PM",
+        activity: "DA Job",
+        focus: "Academic work / Study"
+      },
+      friday: {
+        time: "10:00 PM - 11:00 PM",
+        activity: "Business Work",
+        focus: "Weekly review, client follow-ups"
+      },
+      saturday: {
+        time: "3:00 PM - 5:30 PM",
+        activity: "Extended Business Work",
+        focus: "Major projects, deep work"
+      },
+      sunday: {
+        time: "7:00 PM - 9:00 PM",
+        activity: "Business Planning",
+        focus: "Next week strategy, goal setting"
+      }
+    },
+    
+    instructions: {
+      title: "Turn time into progress.",
+      steps: [
+        {
+          step: 1,
+          title: "FOCUS MANTRAS",
+          details: [
+            "Before starting, say OUT LOUD"
+          ]
+        },
+        {
+          step: 2,
+          title: "EXECUTE WORK",
+          details: [
+            "No distractions",
+            "Phone in airplane mode or different room",
+            "Track progress every 30 minutes",
+            "Complete assigned focus tasks"
+          ]
+        },
+        {
+          step: 3,
+          title: "PRODUCTIVITY LOG",
+          details: [
+            "Document what was accomplished",
+            "Track metrics (leads, emails, tasks completed)",
+            "Note obstacles encountered",
+            "Plan tomorrow's priorities"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM executing when others are watching TV",
+      "I AM building my future right now",
+      "I AM productive beyond normal standards",
+      "I AM getting closer to $5K/month every hour"
+    ],
+    
+    completionCriteria: [
+      "Full work block completed",
+      "Focus maintained throughout",
+      "No scrolling or distractions",
+      "Progress documented"
+    ],
+    
+    harshReality: "Your competition is relaxing. You're building. This is how gaps get created. This is how you win. While they watch Netflix, you build your empire. Years from now, they'll wonder how you got so far ahead. This is how.",
+    
+    victoryMessage: "🔥 VICTORY: Evening work complete while others relax. Progress made. Discipline proven. Empire building continues.",
+    
+    penalty: {
+      violation: "Wasted time",
+      consequences: [
+        "200 burpees",
+        "Lose all Business XP for day",
+        "Must work 4 hours on Sunday",
+        "No entertainment for 7 days"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 14: TOMORROW PLANNING
+  // ========================================
+  {
+    id: 14,
+    time: "11:00 PM",
+    name: "Tomorrow Planning",
+    duration: "15 minutes",
+    xpReward: 5,
+    stat: "mental",
+    category: "night",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Win tomorrow before it starts.",
+      steps: [
+        {
+          step: 1,
+          title: "REVIEW TODAY",
+          details: [
+            "What went well?",
+            "What needs improvement?",
+            "What did you learn?",
+            "XP earned today?",
+            "Violations to address?"
+          ]
+        },
+        {
+          step: 2,
+          title: "PLAN TOMORROW",
+          details: [
+            "Review tomorrow's schedule",
+            "Identify top 3 priorities",
+            "Anticipate obstacles",
+            "Plan solutions in advance",
+            "Set specific targets"
+          ]
+        },
+        {
+          step: 3,
+          title: "PREPARATION",
+          details: [
+            "Lay out workout clothes",
+            "Prepare breakfast (if possible)",
+            "Charge phone in other room",
+            "Set alarm for 6:30 AM",
+            "Visualize perfect execution"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM prepared for tomorrow's challenges",
+      "I AM executing with precision",
+      "I AM winning before the day begins"
+    ],
+    
+    completionCriteria: [
+      "Today reviewed honestly",
+      "Tomorrow planned in detail",
+      "Preparation completed",
+      "Top 3 priorities identified"
+    ],
+    
+    harshReality: "Failing to plan is planning to fail. Champions win tomorrow tonight. Amateurs wing it and wonder why they're inconsistent. 15 minutes of planning saves hours of confusion.",
+    
+    victoryMessage: "🔥 VICTORY: Tomorrow is planned. Preparation complete. You're ready to dominate. Sleep earned.",
+    
+    penalty: {
+      violation: "Skipped planning",
+      consequences: [
+        "Must wake 30 min earlier",
+        "Lose Mental Fortress XP",
+        "Must plan for 3 days in advance"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 15: EVENING REFLECTION + STRETCHING
+  // ========================================
+  {
+    id: 15,
+    time: "11:30 PM",
+    name: "Evening Reflection + Stretching",
+    duration: "15 minutes",
+    xpReward: 10,
+    stat: "mental",
+    category: "night",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Reflect, stretch, prepare for recovery.",
+      steps: [
+        {
+          step: 1,
+          title: "DAILY REFLECTION",
+          details: [
+            "What was today's biggest win?",
+            "Where did I show discipline?",
+            "Where did I show weakness?",
+            "What patterns am I noticing?",
+            "How can I improve tomorrow?",
+            "Did I earn today?"
+          ]
+        },
+        {
+          step: 2,
+          title: "STRETCHING ROUTINE",
+          details: [
+            "Hamstring stretch: 2 min each leg",
+            "Hip flexor stretch: 2 min each leg",
+            "Shoulder stretch: 2 min",
+            "Chest stretch: 2 min",
+            "Spinal twists: 2 min",
+            "Deep breathing throughout"
+          ]
+        },
+        {
+          step: 3,
+          title: "GRATITUDE",
+          details: [
+            "Name 3 things you're grateful for today",
+            "Acknowledge your effort",
+            "Recognize your progress"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM proud of today's effort",
+      "I AM learning and growing",
+      "I AM ready for recovery and tomorrow's battle"
+    ],
+    
+    completionCriteria: [
+      "Honest reflection completed",
+      "Full stretching routine done",
+      "Gratitude practiced",
+      "Mind calmed for sleep"
+    ],
+    
+    harshReality: "Champions reflect. They learn from wins AND losses. Stretching prevents injury and extends your career. This 15 minutes ensures you can fight again tomorrow. Don't skip recovery work.",
+    
+    victoryMessage: "🔥 VICTORY: Day reviewed. Body stretched. Mind calm. Recovery begins. Sleep earned through execution.",
+    
+    penalty: {
+      violation: "Skipped reflection",
+      consequences: [
+        "50 burpees tomorrow morning",
+        "Lose Mental Fortress XP",
+        "Must write 1,000-word reflection",
+        "Extra 30 min stretching tomorrow"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 16: BED PROTOCOL
+  // ========================================
+  {
+    id: 16,
+    time: "11:45 PM",
+    name: "Bed Protocol",
+    duration: "15 minutes",
+    xpReward: 10,
+    stat: "mental",
+    category: "night",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Prepare for warrior's rest.",
+      steps: [
+        {
+          step: 1,
+          title: "PHONE PROTOCOL",
+          details: [
+            "Phone goes in different room",
+            "Charging station away from bedroom",
+            "Set alarm on actual alarm clock",
+            "No 'checking one thing'",
+            "No excuses"
+          ]
+        },
+        {
+          step: 2,
+          title: "BEDROOM PREPARATION",
+          details: [
+            "Room temperature 65-68°F (18-20°C)",
+            "Complete darkness (blackout curtains)",
+            "No screens 30 min before bed",
+            "Lay out tomorrow's clothes",
+            "Water bottle on nightstand"
+          ]
+        },
+        {
+          step: 3,
+          title: "FINAL DECLARATIONS",
+          details: [
+            "In bed, say these in your mind or whisper"
+          ]
+        },
+        {
+          step: 4,
+          title: "SLEEP POSITION",
+          details: [
+            "Optimal: On back or side",
+            "Support pillow if needed",
+            "Comfortable but not luxurious",
+            "Close eyes and focus on breathing"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM proud of today's execution",
+      "I AM recovering to dominate tomorrow",
+      "I AM a warrior who earned this rest",
+      "I AM waking at 6:30 AM with power",
+      "I AM grateful for another day to become elite"
+    ],
+    
+    completionCriteria: [
+      "Phone out of bedroom",
+      "Room optimized for sleep",
+      "Said final declarations",
+      "In bed by 11:45 PM",
+      "Lights out by 12:00 AM"
+    ],
+    
+    harshReality: "Sleep is recovery. Recovery is performance. You cannot wake at 6:30 AM sharp and dominate if you're sleeping at 2 AM. Late nights are borrowed energy from tomorrow's performance. Pay now or pay with interest later.",
+    
+    victoryMessage: "🔥 VICTORY: Perfect day complete. Sleep earned through discipline. Recovery begins. Tomorrow's dominance secured.",
+    
+    penalty: {
+      violation: "Stayed up past midnight",
+      consequences: [
+        "Wake 30 minutes earlier next day",
+        "No caffeine next day",
+        "100 burpees at 6:30 AM",
+        "Lose Physical Weapon XP",
+        "Mandatory 11:30 PM bedtime for 7 days"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 17: NO PORN (ALL DAY)
+  // ========================================
+  {
+    id: 17,
+    time: "ALL DAY",
+    name: "No Porn - Zero Tolerance",
+    duration: "Continuous",
+    xpReward: 10,
+    stat: "mental",
+    category: "all-day",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Zero tolerance. Not negotiable.",
+      steps: [
+        {
+          step: 1,
+          title: "THE RULE",
+          details: [
+            "No pornographic content of any kind",
+            "No 'just checking' social media",
+            "No 'artistic' content that's obviously porn",
+            "No erotic stories or audio",
+            "No cam sites or OnlyFans",
+            "No Instagram 'fitness' models",
+            "No Reddit NSFW",
+            "ZERO. TOLERANCE."
+          ]
+        },
+        {
+          step: 2,
+          title: "IF TEMPTED",
+          details: [
+            "Click EMERGENCY PROTOCOL button immediately",
+            "Read EVERY WORD",
+            "Say affirmations OUT LOUD",
+            "Complete physical action",
+            "Use cognitive anchor technique",
+            "Walk away victorious"
+          ]
+        },
+        {
+          step: 3,
+          title: "END OF DAY CHECK",
+          details: [
+            "Check this box only if 100% clean",
+            "Be honest - this is for YOU",
+            "Streak continues or resets based on truth"
+          ]
+        }
+      ]
+    },
+    
+    affirmations: [
+      "I AM a warrior who controls his impulses",
+      "I AM choosing to build instead of consume",
+      "I AM protecting my energy and focus",
+      "I AM the man who keeps his word to himself"
+    ],
+    
+    completionCriteria: [
+      "Zero pornographic content viewed",
+      "Used emergency protocol if tempted",
+      "Maintained 100% clean day",
+      "Honest with yourself"
+    ],
+    
+    harshReality: "You cannot build an empire with a dopamine-fried brain. Every click is choosing weakness. Your competition is training while you're clicking. The gap between who you claim to be and who you actually are? That gap IS your life. Choose who you're becoming.",
+    
+    victoryMessage: "🔥 VICTORY: Another day clean. Streak extended. Brain healing. Self-respect earned. You're proving you're different. This is how champions are built.",
+    
+    penalty: {
+      violation: "Viewed pornographic content",
+      consequences: [
+        "Streak reset to Day 0",
+        "200 burpees immediately",
+        "Write 1,000 words on why you chose weakness",
+        "Public accountability (if you have partner)",
+        "Lose ALL Business Warrior XP for the week",
+        "Mandatory emergency protocol review daily for 7 days"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 18: NO SCROLLING (ALL DAY)
+  // ========================================
+  {
+    id: 18,
+    time: "ALL DAY",
+    name: "No Mindless Scrolling",
+    duration: "Continuous",
+    xpReward: 5,
+    stat: "mental",
+    category: "all-day",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "Phone use must have purpose.",
+      steps: [
+        {
+          step: 1,
+          title: "THE RULE",
+          details: [
+            "No Instagram except business purposes",
+            "No TikTok ever",
+            "No Reddit except specific educational subreddits",
+            "No Twitter/X doomscrolling",
+            "No YouTube recommendations rabbit hole",
+            "No news feeds",
+            "IF YOU PICK UP PHONE, HAVE A REASON"
+          ]
+        },
+        {
+          step: 2,
+          title: "REPLACEMENT BEHAVIOR",
+          details: [
+            "When tempted to scroll:",
+            "1. Put phone down",
+            "2. Do 20 push-ups",
+            "3. Open business task list",
+            "4. Complete ONE business task",
+            "5. Track the time saved"
+          ]
+        }
+      ]
+    },
+    
+    completionCriteria: [
+      "Zero mindless scrolling",
+      "All phone use was purposeful",
+      "Used replacement behavior when tempted"
+    ],
+    
+    harshReality: "Scrolling is stealing from your future. Every minute wasted is progress you didn't make. Your competition is building while you're consuming. Stop being a content consumer. Become a value creator.",
+    
+    victoryMessage: "🔥 VICTORY: Zero time wasted scrolling. All phone use was strategic. You're in control, not controlled.",
+    
+    penalty: {
+      violation: "Mindless scrolling",
+      consequences: [
+        "100 burpees immediately",
+        "Phone in grayscale for 24 hours",
+        "No social media for 7 days",
+        "Write 500 words on wasted time",
+        "Track every phone pickup for 3 days"
+      ]
+    }
+  },
+  
+  // ========================================
+  // TASK 19: TRACK EVERYTHING (ALL DAY)
+  // ========================================
+  {
+    id: 19,
+    time: "ALL DAY",
+    name: "Track Everything",
+    duration: "Continuous",
+    xpReward: 10,
+    stat: "mental",
+    category: "all-day",
+    daySpecific: false,
+    required: true,
+    
+    instructions: {
+      title: "What gets measured gets managed.",
+      steps: [
+        {
+          step: 1,
+          title: "REQUIRED TRACKING",
+          details: [
+            "Every task completed (check off)",
+            "Every meal eaten (log)",
+            "Every training session (document)",
+            "Every business metric (record)",
+            "Every hour at DA job (account for)",
+            "Water intake (track)",
+            "Sleep times (log)",
+            "Violations (admit honestly)"
+          ]
+        },
+        {
+          step: 2,
+          title: "HOW TO TRACK",
+          details: [
+            "Check off tasks as completed in system",
+            "Use notes app for food log",
+            "Training log in dedicated notebook",
+            "Business metrics in spreadsheet",
+            "Water with tally marks",
+            "Be honest with yourself"
+          ]
+        }
+      ]
+    },
+    
+    completionCriteria: [
+      "All tasks logged",
+      "All metrics tracked",
+      "Nothing skipped or forgotten",
+      "Complete honesty maintained"
+    ],
+    
+    harshReality: "You cannot manage what you do not measure. Tracking is accountability. Men who track their lives get results. Men who 'wing it' stay mediocre. This isn't optional - this is how serious people operate.",
+    
+    victoryMessage: "🔥 VICTORY: Everything tracked. Full accountability maintained. Data collected. Progress measurable.",
+    
+    penalty: {
+      violation: "Failed to track",
+      consequences: [
+        "Cannot claim XP for untracked activities",
+        "Lose 50 XP from each stat",
+        "Must track EVERYTHING for 7 days (extreme detail)",
+        "No exceptions next week"
+      ]
+    }
+  }
+  
+];
+
+// Export for use in application
+export default DAILY_TASKS;
+```
+
+---
+
+## **DAY-SPECIFIC SCHEDULE SUMMARIES**
+
+### **MONDAY (Full Business Day)**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Intelligence Training
+- 8:30 AM: DA Job (Business Work)
+- 12:00 PM: Lunch
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Weapons Training
+- 7:00 PM: DA Job
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **TUESDAY (Class Day)**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Academic Prep
+- 8:30 AM: Classes (French, Entrepreneurship, Personal Finance)
+- 12:00 PM: Lunch
+- 12:30 PM: Business Work
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Striking Training (Boxing)
+- 8:00 PM: DA Job (Academic)
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **WEDNESDAY (Full Business Day)**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Intelligence Training
+- 8:30 AM: DA Job (Business Work)
+- 12:00 PM: Lunch
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Recovery (Light)
+- 7:00 PM: DA Job
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **THURSDAY (Class Day)**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Academic Prep
+- 8:30 AM: Classes (French, Entrepreneurship, Personal Finance)
+- 12:00 PM: Lunch
+- 12:30 PM: Business Work
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Grappling Training (BJJ)
+- 8:00 PM: DA Job (Academic)
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **FRIDAY**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Intelligence Training
+- 8:30 AM: DA Job (Business Work)
+- 12:00 PM: Lunch
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Heavy Duty Lifting
+- 10:00 PM: Business Work
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **SATURDAY**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Business Strategy
+- 8:30 AM: Business Deep Work
+- 12:00 PM: Lunch
+- 12:30 PM: MMA Integration Training
+- 3:00 PM: Extended Business Work
+- 5:30 PM: Dinner
+- 7:00 PM: Free / Personal
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+### **SUNDAY**
+- 6:30 AM: Wake + Cold Shower + Meditation + Breakfast
+- 7:45 AM: Intelligence + Weekly Review
+- 8:30 AM: Weekly Planning
+- 12:00 PM: Lunch
+- 2:30 PM: Pre-Tennis
+- 3:00 PM: Tennis
+- 5:30 PM: Dinner
+- 6:30 PM: Active Recovery
+- 7:00 PM: Business Planning for Week
+- 11:00 PM: Planning
+- 11:30 PM: Reflection
+- 11:45 PM: Bed Protocol
+
+---
+
+## **HOW TO EDIT IN BOLT**
+
+This structure is designed to be easily editable. Here's how:
+
+### **To Change Times:**
+```javascript
+{
+  time: "6:30 AM",  // ← Edit this
+  // ...
+}
+```
+
+### **To Change XP Rewards:**
+```javascript
+{
+  xpReward: 20,  // ← Edit this number
+  // ...
+}
+```
+
+### **To Add/Remove Steps:**
+```javascript
+steps: [
+  {
+    step: 1,
+    title: "YOUR STEP",
+    details: ["Your instructions"]
+  },
+  // Add more steps here
+]
+```
+
+### **To Change Affirmations:**
+```javascript
+affirmations: [
+  "Your affirmation here",
+  "Another affirmation",
+  // Add or remove as needed
+]
+```
+
+### **To Add New Tasks:**
+Copy an existing task object, change the ID to next number, modify all fields, add to array.
+
+### **To Remove Tasks:**
+Simply delete the task object or set `required: false`.
+
+---
+
+## **INTEGRATION WITH BOLT PROMPT**
+
+Add this to your Bolt prompt:
+
+```
+---
+
+## **COMPLETE TASK DATABASE**
+
+Import the DAILY_TASKS array from the document above. This contains all 19 daily tasks with:
+
+- Full instructions for each
+- Day-specific variations
+- All affirmations and mantras
+- Completion criteria
+- Harsh reality checks
+- Victory messages
+- Penalty systems
+
+The system should:
+1. Display tasks in chronological order
+2. Highlight current task based on time
+3. Show day-specific variations automatically
+4. Allow user to click task to see full details
+5. Award XP when task marked complete
+6. Save all progress to localStorage
+7. Allow editing of past days
+
+Each task object is fully editable - users can customize:
+- Times
+- XP amounts
+- Instructions
+- Affirmations
+- Completion criteria
+- Everything
+
+---
+```
+
+---
+
+## **TOTAL DAILY XP POSSIBLE**
+
+**Morning Block:** 60 XP
+**Work Block:** 40 XP
+**Tennis Block:** 45 XP
+**Evening Block:** 60 XP
+**Night Block:** 40 XP
+**All-Day:** 25 XP
+
+**TOTAL: 270+ XP per perfect day**
+
+**Weekly total:** ~1,900 XP
+**Monthly total:** ~8,100 XP
+
+With this XP rate and formula (Level × 100), you'll level up frequently and feel constant progress.
+
+---
+
+**THIS IS YOUR COMPLETE EDITABLE TASK LIST.**
+
+**19 TASKS TOTAL.**
+**EVERY DETAIL INCLUDED.**
+**CHRONOLOGICAL ORDER.**
+**DAY-SPECIFIC VARIATIONS.**
+**FULLY EDITABLE STRUCTURE.**
+**READY FOR BOLT INTEGRATION.**
+
+**COPY INTO YOUR BOLT PROMPT.**
+**CUSTOMIZE AS NEEDED.**
+**BUILD YOUR SYSTEM.**
+**EXECUTE DAILY.**
+**BECOME APEX.**
