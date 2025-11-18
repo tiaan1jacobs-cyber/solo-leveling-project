@@ -1,0 +1,1035 @@
+# INTEGRATION GUIDE - RULES & HARSH MOTIVATION
+## How to Add All Rules and Brutal Reality Checks to Your Bolt Project
+
+---
+
+## **STEP 1: ADD TO YOUR BOLT PROMPT**
+
+Copy this entire section and add it to your existing Bolt prompt:
+
+```
+---
+
+## **RULES & ACCOUNTABILITY SYSTEM**
+
+### **THE 10 UNBREAKABLE COMMANDMENTS**
+
+Create a dedicated "Commandments" page accessible from main navigation.
+
+**COMMANDMENT 1: ZERO PORNOGRAPHY**
+- Full rule text from COMPLETE_RULES_AND_BRUTAL_REALITY.txt
+- Penalties clearly listed
+- Emergency protocol button on this page
+
+**COMMANDMENT 2: WAKE AT 6:30 AM**
+- Full rule text
+- Penalties listed
+- Streak tracker integration
+
+**COMMANDMENT 3: COLD WATER DAILY**
+- Full rule text
+- Penalties listed  
+- Cold shower tracker
+
+**COMMANDMENT 4: TENNIS - NO EXCEPTIONS**
+- Full rule text
+- Penalties listed
+- Practice log integration
+
+**COMMANDMENT 5: COMBAT TRAINING - 6 DAYS**
+- Full rule text
+- Day-specific requirements
+- Penalties listed
+
+**COMMANDMENT 6: DA TIME = PRODUCTIVE TIME**
+- Full rule text
+- Hour tracking
+- Penalties listed
+
+**COMMANDMENT 7: TRACK EVERYTHING**
+- Full rule text
+- Tracking checklist
+- Penalties listed
+
+**COMMANDMENT 8: PHONE OUT OF BEDROOM**
+- Full rule text
+- Penalties listed
+- Alarm clock requirement
+
+**COMMANDMENT 9: BED BY MIDNIGHT**
+- Full rule text
+- Sleep tracking
+- Penalties listed
+
+**COMMANDMENT 10: ZERO VIOLATIONS**
+- Full rule text
+- Violation tracking system
+- Public accountability option
+
+---
+
+## **HARSH MOTIVATION SYSTEM**
+
+### **Rotating Harsh Quotes (Dashboard)**
+
+Display ONE random quote on dashboard header, rotating every 30 seconds:
+
+1. "Your competition is training while you make excuses."
+2. "Every time you fold, you train yourself to be weak."
+3. "The gap between who you claim to be and who you are IS your life."
+4. "Weak men create hard times. Don't be weak."
+5. "Your ancestors fought wars. You can wake up on time."
+6. "Comfort is killing you slowly."
+7. "Nobody cares, work harder."
+8. "The market doesn't care about your feelings."
+9. "You're not tired, you're undisciplined."
+10. "Excuses are nails in the house of failure."
+11. "Pain is weakness leaving the body."
+12. "If it doesn't challenge you, it doesn't change you."
+13. "You get what you tolerate."
+14. "Stop talking, start doing."
+15. "Potential means nothing. Execute."
+16. "The only easy day was yesterday."
+17. "Discipline equals freedom."
+18. "Be uncommon amongst uncommon men."
+19. "Hard times create strong men."
+20. "You're either building your legacy or destroying it."
+21. "Second place is first loser."
+22. "The wolf doesn't care about your feelings."
+23. "Pressure makes diamonds."
+24. "All in or not at all."
+25. "Hesitation is defeat."
+26. "Someone is coming for what you want."
+27. "Your window is closing. Move."
+28. "Comfort is the enemy of greatness."
+29. "You can have results or excuses. Not both."
+30. "It's supposed to hurt. That means it's working."
+
+---
+
+## **EMERGENCY PROTOCOL BUTTON**
+
+Add a permanent floating button visible on ALL pages:
+
+```jsx
+<button 
+  className="emergency-protocol-btn"
+  onClick={() => setShowEmergencyProtocol(true)}
+>
+  🚨 EMERGENCY PROTOCOL
+</button>
+
+// CSS for button
+.emergency-protocol-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #8B0000 0%, #FF0000 100%);
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid #FF0000;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
+  }
+}
+```
+
+When clicked, opens FULL-SCREEN modal with complete emergency protocol from the rules document.
+
+---
+
+## **VIOLATION TRACKING PAGE**
+
+Create "Violation Log" page with:
+
+- List of all violations this week
+- Penalties owed vs completed
+- Monthly violation count
+- All-time violation stats
+- Trending analysis
+- [Log New Violation] button
+- Violation history calendar
+
+---
+
+## **INTEGRATION IN EACH TASK MODAL**
+
+Before main instructions in EVERY task modal, add a harsh reality section:
+
+**Example for Wake Up task:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  HARSH REALITY:                                             │
+│  Your competition woke up at 5 AM. You're already behind.   │
+│  Every snooze is training yourself to break promises.        │
+│  Stand up NOW or stay mediocre forever.                     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Example for Cold Shower task:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  HARSH REALITY:                                             │
+│  Warriors embrace discomfort. Civilians avoid it.            │
+│  3 minutes of cold water is building the discipline you     │
+│  need for everything else. No excuses.                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Example for Business Work task:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  HARSH REALITY:                                             │
+│  Every hour you waste is $50 you didn't earn. Someone      │
+│  else is building while you're scrolling. The market       │
+│  doesn't care about your feelings. Execute or stay broke.   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## **VICTORY DECLARATIONS SYSTEM**
+
+After completing any task, show aggressive victory message:
+
+**Example after Wake Up:**
+```
+🔥 VICTORY: You dominated the first test of the day.
+Most men lost this battle. You won. Momentum is yours.
+```
+
+**Example after Cold Shower:**
+```
+🔥 VICTORY: You chose discomfort over comfort.
+Warriors are forged in cold water. You're getting stronger.
+```
+
+**Example after completing all daily tasks:**
+```
+🔥 PERFECT DAY ACHIEVED: You're 1% of men who execute daily.
+Your competition is making excuses. You're making progress.
+This is how champions are built. Repeat tomorrow.
+```
+
+---
+
+## **MISSED TASK HARSH CONSEQUENCES**
+
+When a task is marked incomplete or skipped:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  ⚠️ VIOLATION DETECTED                                      │
+│                                                             │
+│  Task missed: [Task Name]                                   │
+│                                                             │
+│  HARSH REALITY:                                             │
+│  You broke your word to yourself. This is how mediocrity   │
+│  starts. One skip becomes a pattern. Patterns become        │
+│  identity. Right now, you're training yourself to be a     │
+│  quitter.                                                   │
+│                                                             │
+│  IMMEDIATE CONSEQUENCES:                                    │
+│  • Streak broken                                            │
+│  • [X] burpees owed                                         │
+│  • [X] XP lost                                              │
+│  • Violation logged publicly                                │
+│                                                             │
+│  YOUR CHOICE:                                               │
+│  [Complete Task Now] [Accept Violation]                     │
+│                                                             │
+│  Choose wisely. Your future self is watching.               │
+└─────────────────────────────────────────────────────────────┘
+```
+```
+
+---
+
+## **REACT CODE EXAMPLES**
+
+### **Rotating Harsh Quotes Component:**
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+const harshQuotes = [
+  "Your competition is training while you make excuses.",
+  "Every time you fold, you train yourself to be weak.",
+  "The gap between who you claim to be and who you are IS your life.",
+  "Weak men create hard times. Don't be weak.",
+  "Your ancestors fought wars. You can wake up on time.",
+  "Comfort is killing you slowly.",
+  "Nobody cares, work harder.",
+  "The market doesn't care about your feelings.",
+  "You're not tired, you're undisciplined.",
+  "Excuses are nails in the house of failure.",
+  "Pain is weakness leaving the body.",
+  "If it doesn't challenge you, it doesn't change you.",
+  "You get what you tolerate.",
+  "Stop talking, start doing.",
+  "Potential means nothing. Execute.",
+  "The only easy day was yesterday.",
+  "Discipline equals freedom.",
+  "Be uncommon amongst uncommon men.",
+  "Hard times create strong men.",
+  "You're either building your legacy or destroying it.",
+  "Second place is first loser.",
+  "The wolf doesn't care about your feelings.",
+  "Pressure makes diamonds.",
+  "All in or not at all.",
+  "Hesitation is defeat.",
+  "Someone is coming for what you want.",
+  "Your window is closing. Move.",
+  "Comfort is the enemy of greatness.",
+  "You can have results or excuses. Not both.",
+  "It's supposed to hurt. That means it's working."
+];
+
+function RotatingHarshQuote() {
+  const [currentQuote, setCurrentQuote] = useState(harshQuotes[0]);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const randomIndex = Math.floor(Math.random() * harshQuotes.length);
+      setCurrentQuote(harshQuotes[randomIndex]);
+    }, 30000); // Every 30 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <div className="harsh-quote-container">
+      <p className="harsh-quote">{currentQuote}</p>
+    </div>
+  );
+}
+
+export default RotatingHarshQuote;
+```
+
+### **CSS for Harsh Quote:**
+
+```css
+.harsh-quote-container {
+  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  border-left: 4px solid #8B0000;
+  padding: 15px 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.harsh-quote {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+```
+
+---
+
+### **Emergency Protocol Component:**
+
+```jsx
+import React, { useState, useEffect } from 'react';
+
+function EmergencyProtocol({ isOpen, onClose }) {
+  const [step, setStep] = useState(1);
+  const [canProceed, setCanProceed] = useState(false);
+  const [affirmationsChecked, setAffirmationsChecked] = useState(
+    Array(10).fill(false)
+  );
+  const [physicalActionComplete, setPhysicalActionComplete] = useState(false);
+  
+  const affirmations = [
+    "I AM a man who controls his impulses",
+    "I AM choosing to BUILD instead of CONSUME",
+    "I AM selecting my future over temporary dopamine",
+    "I AM keeping my word to myself",
+    "I AM protecting my focus and energy for real goals",
+    "I AM proving I can be trusted with power",
+    "I AM the man who walks away from weakness",
+    "I AM a WARRIOR, not a CONSUMER",
+    "I AM disciplined beyond what others think possible",
+    "I AM proving my competition wrong RIGHT NOW"
+  ];
+  
+  useEffect(() => {
+    if (isOpen) {
+      // Force user to wait 60 seconds on step 1
+      const timer = setTimeout(() => {
+        setCanProceed(true);
+      }, 60000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, step]);
+  
+  if (!isOpen) return null;
+  
+  return (
+    <div className="emergency-protocol-overlay">
+      {step === 1 && (
+        <div className="emergency-content">
+          <h1>⚠️ EMERGENCY PROTOCOL ⚠️</h1>
+          <h2>RED ALERT ACTIVATED</h2>
+          
+          <div className="protocol-section">
+            <h3>STOP. READ EVERY WORD BELOW. OUT LOUD.</h3>
+            
+            <div className="reality-check">
+              <h4>YOU KNOW EXACTLY WHERE THIS LEADS:</h4>
+              <ol>
+                <li>Next 5 minutes: False pleasure</li>
+                <li>Minute 6: Shame starts</li>
+                <li>Next 5 hours: Dopamine flatline</li>
+                <li>Next 3 days: Low energy, no focus</li>
+                <li>Streak broken: All progress reset</li>
+                <li>Identity damaged: You proved yourself weak</li>
+              </ol>
+              <p className="emphasis">
+                This is not new. You've done this cycle 100 times.
+                You KNOW how it ends.
+              </p>
+            </div>
+            
+            <div className="reality-check">
+              <h4>THE MATH:</h4>
+              <ul>
+                <li>You've wasted 500+ hours of your life on this</li>
+                <li>That's 3 FULL MONTHS of 40-hour work weeks</li>
+                <li>GONE. For dopamine you can't remember 10 minutes later</li>
+                <li>Your competition used those 500 hours to build businesses, develop skills, create relationships, become dangerous</li>
+              </ul>
+              <p className="emphasis">
+                The gap is massive. Every click makes it wider.
+              </p>
+            </div>
+            
+            <div className="reality-check">
+              <h4>YOUR COMPETITION RIGHT NOW:</h4>
+              <p>Someone with your exact opportunities is:</p>
+              <ul>
+                <li>Working on their business</li>
+                <li>Training their body</li>
+                <li>Learning valuable skills</li>
+                <li>Building real relationships</li>
+                <li>Becoming elite</li>
+              </ul>
+              <p className="emphasis">
+                While you're about to click pixels of fake women.
+              </p>
+              <p className="emphasis">
+                In 12 months, they'll be successful. You'll still be clicking.
+                The gap will be too wide to close.
+              </p>
+            </div>
+            
+            <div className="reality-check">
+              <h4>THE QUESTIONS:</h4>
+              <ul>
+                <li>Could you tell your father what you're about to look at?</li>
+                <li>Could you tell a man you respect how you spent tonight?</li>
+                <li>Would you want your future son to follow this example?</li>
+                <li>Would you want your future wife to see your history?</li>
+              </ul>
+              <p className="emphasis">
+                If the answer is NO to any of these, then you KNOW this is shameful behavior.
+              </p>
+              <p className="emphasis">
+                The gap between who you claim to be and who you actually are?
+                That gap IS your entire life.
+              </p>
+            </div>
+            
+            <div className="reality-check">
+              <h4>THE HARSH TRUTH:</h4>
+              <ul>
+                <li>Your dopamine receptors are FRIED</li>
+                <li>Your reward system is HIJACKED</li>
+                <li>You're training escalation into your brain</li>
+                <li>You CANNOT pair-bond normally anymore</li>
+                <li>You're destroying attraction to real women</li>
+                <li>This is LITERAL BRAIN DAMAGE you're choosing</li>
+              </ul>
+              <p className="emphasis">
+                Every click makes the damage worse.
+                Every abstinence day makes you heal.
+                Choose damage or choose healing. You can't choose both.
+              </p>
+            </div>
+            
+            <div className="consequences-comparison">
+              <div className="negative-path">
+                <h4>WHAT HAPPENS IF YOU CLICK:</h4>
+                <ul>
+                  <li>❌ Streak broken (43 days GONE)</li>
+                  <li>❌ All Mental Fortress XP reset</li>
+                  <li>❌ Identity damaged (you proved yourself weak)</li>
+                  <li>❌ 5 hours of flatline depression</li>
+                  <li>❌ 3 days of low energy</li>
+                  <li>❌ Shame spiral</li>
+                  <li>❌ 200 burpee penalty</li>
+                  <li>❌ Written accountability (1,000 words)</li>
+                  <li>❌ Restart from zero</li>
+                  <li>❌ Competition gets further ahead</li>
+                </ul>
+              </div>
+              
+              <div className="positive-path">
+                <h4>WHAT HAPPENS IF YOU WALK AWAY:</h4>
+                <ul>
+                  <li>✅ Streak continues (44 days)</li>
+                  <li>✅ +10 XP bonus for resisting</li>
+                  <li>✅ Identity strengthened (you kept your word)</li>
+                  <li>✅ Energy maintained</li>
+                  <li>✅ Focus intact for business tomorrow</li>
+                  <li>✅ Self-respect earned</li>
+                  <li>✅ Pride justified</li>
+                  <li>✅ Closer to $5K/month goal</li>
+                  <li>✅ Brain healing continues</li>
+                  <li>✅ You proved you're serious</li>
+                </ul>
+              </div>
+            </div>
+            
+            {!canProceed && (
+              <div className="wait-timer">
+                <p>You must read for 60 seconds before continuing...</p>
+                <div className="timer-bar"></div>
+              </div>
+            )}
+            
+            {canProceed && (
+              <button 
+                className="proceed-btn"
+                onClick={() => setStep(2)}
+              >
+                Continue to Affirmations →
+              </button>
+            )}
+          </div>
+        </div>
+      )}
+      
+      {step === 2 && (
+        <div className="emergency-content">
+          <h2>MANDATORY AFFIRMATIONS</h2>
+          <h3>SAY THESE OUT LOUD NOW</h3>
+          
+          <p className="instruction">
+            Stand up. Shoulders back. Voice LOUD and CLEAR:
+          </p>
+          <p className="instruction">
+            Click each one AS YOU SAY IT:
+          </p>
+          
+          <div className="affirmations-list">
+            {affirmations.map((affirmation, index) => (
+              <label key={index} className="affirmation-item">
+                <input
+                  type="checkbox"
+                  checked={affirmationsChecked[index]}
+                  onChange={(e) => {
+                    const newChecked = [...affirmationsChecked];
+                    newChecked[index] = e.target.checked;
+                    setAffirmationsChecked(newChecked);
+                  }}
+                />
+                <span className="affirmation-text">"{affirmation}"</span>
+              </label>
+            ))}
+          </div>
+          
+          {affirmationsChecked.every(checked => checked) && (
+            <button 
+              className="proceed-btn"
+              onClick={() => setStep(3)}
+            >
+              All Affirmations Said - Continue →
+            </button>
+          )}
+        </div>
+      )}
+      
+      {step === 3 && (
+        <div className="emergency-content">
+          <h2>IMMEDIATE PHYSICAL ACTION REQUIRED</h2>
+          
+          <p className="instruction">
+            Your brain needs a pattern interrupt. NOW.
+          </p>
+          
+          <p className="instruction">
+            Do ONE of these IMMEDIATELY (no exceptions):
+          </p>
+          
+          <div className="physical-actions">
+            <button 
+              className="action-btn"
+              onClick={() => setPhysicalActionComplete(true)}
+            >
+              🏃 20 PUSH-UPS NOW
+              <span className="action-detail">
+                Start immediately. Count out loud. Feel your body work.
+              </span>
+            </button>
+            
+            <button 
+              className="action-btn"
+              onClick={() => setPhysicalActionComplete(true)}
+            >
+              🚶 3-MINUTE WALK OUTSIDE
+              <span className="action-detail">
+                Leave your phone inside. Walk with purpose. Feel the air.
+              </span>
+            </button>
+            
+            <button 
+              className="action-btn"
+              onClick={() => setPhysicalActionComplete(true)}
+            >
+              🥊 50 BURPEES
+              <span className="action-detail">
+                Go until you're breathing hard. Exhaust the urge physically.
+              </span>
+            </button>
+          </div>
+          
+          {physicalActionComplete && (
+            <>
+              <div className="cognitive-anchor">
+                <h3>COGNITIVE ANCHOR TECHNIQUE:</h3>
+                <ol>
+                  <li>Say: "Update: data received" (This is information, not identity)</li>
+                  <li>Breathe: 4 seconds in, 6 seconds out (3 times) (Reset your nervous system)</li>
+                  <li>Reset posture: Shoulders back, chest out (Physical state changes mental state)</li>
+                  <li>Say: "I choose strength over weakness" (Declare your decision)</li>
+                </ol>
+              </div>
+              
+              <button 
+                className="proceed-btn"
+                onClick={() => setStep(4)}
+              >
+                ✓ I COMPLETED PHYSICAL ACTION →
+              </button>
+            </>
+          )}
+        </div>
+      )}
+      
+      {step === 4 && (
+        <div className="emergency-content victory">
+          <h2>VICTORY DECLARATION</h2>
+          
+          <p className="victory-text">
+            You just won a battle.<br/>
+            Most men lose this battle.<br/>
+            You didn't.
+          </p>
+          
+          <div className="victory-affirmations">
+            <p>"I AM proving my discipline RIGHT NOW"</p>
+            <p>"I AM earning my own respect"</p>
+            <p>"I AM building the man I want to become"</p>
+            <p>"I AM undefeated in this battle today"</p>
+            <p>"I AM choosing power over pleasure"</p>
+            <p>"I AM a WARRIOR who just won a REAL battle"</p>
+          </div>
+          
+          <div className="victory-rewards">
+            <h3>✅ Rewards Earned:</h3>
+            <ul>
+              <li>✅ Today's "No Porn" box checked</li>
+              <li>✅ Streak maintained: 44 days</li>
+              <li>✅ +10 XP to Mental Fortress (resistance bonus)</li>
+              <li>✅ +5 XP bonus for protocol completion</li>
+            </ul>
+          </div>
+          
+          <p className="victory-message">
+            This was a VICTORY.<br/>
+            You walked away.<br/>
+            You kept your word.<br/>
+            You proved you're different.<br/>
+            <br/>
+            Your competition just lost this same battle.<br/>
+            You won.<br/>
+            <br/>
+            Remember this feeling.<br/>
+            This is what winning feels like.<br/>
+            <br/>
+            NOW GO DOMINATE YOUR ACTUAL GOALS.
+          </p>
+          
+          <button 
+            className="complete-btn"
+            onClick={() => {
+              // Award bonus XP
+              // Check "No Porn" box
+              // Save victory log
+              onClose();
+            }}
+          >
+            Close & Continue Building Your Empire
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default EmergencyProtocol;
+```
+
+---
+
+### **CSS for Emergency Protocol:**
+
+```css
+.emergency-protocol-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.98);
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.emergency-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  border: 3px solid #8B0000;
+  border-radius: 10px;
+  padding: 40px;
+  color: #FFFFFF;
+}
+
+.emergency-content h1 {
+  color: #FF0000;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.emergency-content h2 {
+  color: #FF0000;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.reality-check {
+  background: #000000;
+  border-left: 4px solid #8B0000;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.reality-check h4 {
+  color: #FF6600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.reality-check ul,
+.reality-check ol {
+  margin-left: 20px;
+  line-height: 1.8;
+}
+
+.reality-check .emphasis {
+  color: #FF0000;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.consequences-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.negative-path,
+.positive-path {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.negative-path {
+  background: #2a0000;
+  border: 2px solid #FF0000;
+}
+
+.positive-path {
+  background: #002a00;
+  border: 2px solid #00FF00;
+}
+
+.negative-path h4 {
+  color: #FF0000;
+}
+
+.positive-path h4 {
+  color: #00FF00;
+}
+
+.affirmations-list {
+  margin: 30px 0;
+}
+
+.affirmation-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background: #000000;
+  border-left: 4px solid #8B0000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.affirmation-item:hover {
+  background: #1a1a1a;
+  border-left-color: #FF0000;
+}
+
+.affirmation-item input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.affirmation-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.physical-actions {
+  display: grid;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.action-btn {
+  background: linear-gradient(135deg, #8B0000 0%, #FF0000 100%);
+  color: white;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
+.action-detail {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.proceed-btn,
+.complete-btn {
+  background: linear-gradient(135deg, #00FF00 0%, #00AA00 100%);
+  color: #000000;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.proceed-btn:hover,
+.complete-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 255, 0, 0.5);
+}
+
+.victory {
+  text-align: center;
+}
+
+.victory-text {
+  font-size: 24px;
+  line-height: 1.8;
+  color: #FFD700;
+  margin: 30px 0;
+}
+
+.victory-affirmations p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00FF00;
+  margin: 15px 0;
+}
+
+.victory-rewards {
+  background: #002a00;
+  border: 2px solid #00FF00;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+}
+
+.victory-message {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 30px 0;
+  color: #CCCCCC;
+}
+```
+
+---
+
+## **COMMANDMENTS PAGE LAYOUT**
+
+```jsx
+function CommandmentsPage() {
+  const commandments = [
+    {
+      number: 1,
+      title: "ZERO PORNOGRAPHY",
+      rule: "No pornographic content of any kind...",
+      why: "You cannot build an empire with a dopamine-fried brain...",
+      penalty: "Streak reset, 200 burpees, 1,000 word essay..."
+    },
+    // ... all 10 commandments
+  ];
+  
+  return (
+    <div className="commandments-page">
+      <h1>THE 10 UNBREAKABLE COMMANDMENTS</h1>
+      <p className="subtitle">These are NON-NEGOTIABLE. Not suggestions. Not goals. COMMANDMENTS.</p>
+      
+      {commandments.map(cmd => (
+        <div key={cmd.number} className="commandment-card">
+          <h2>COMMANDMENT {cmd.number}: {cmd.title}</h2>
+          
+          <div className="rule-section">
+            <h3>THE RULE:</h3>
+            <p>{cmd.rule}</p>
+          </div>
+          
+          <div className="why-section">
+            <h3>WHY IT MATTERS:</h3>
+            <p>{cmd.why}</p>
+          </div>
+          
+          <div className="penalty-section">
+            <h3>VIOLATION PENALTY:</h3>
+            <p>{cmd.penalty}</p>
+          </div>
+        </div>
+      ))}
+      
+      <div className="commandments-footer">
+        <button className="view-violations-btn">
+          View Violation Log
+        </button>
+        <button className="emergency-btn">
+          🚨 Emergency Protocol
+        </button>
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+## **INTEGRATION CHECKLIST**
+
+Add these to your Bolt prompt:
+
+✅ **1. Dashboard Header:**
+- Rotating harsh quote component
+- Changes every 30 seconds
+- Red/black color scheme
+
+✅ **2. Emergency Button:**
+- Fixed position, always visible
+- Red pulsing button
+- Opens full-screen protocol
+
+✅ **3. Commandments Page:**
+- All 10 rules with full text
+- Penalties clearly listed
+- Link to violation log
+
+✅ **4. Task Modals:**
+- Harsh reality section at top of each
+- Task-specific harsh motivation
+- Victory message after completion
+
+✅ **5. Violation Tracking:**
+- Dedicated page
+- Log violations
+- Track penalties
+- View history
+
+✅ **6. Missed Task Warnings:**
+- Harsh consequence warnings
+- Immediate penalty display
+- Option to complete or accept violation
+
+✅ **7. Victory Declarations:**
+- After each completed task
+- Aggressive positive reinforcement
+- Competitive framing
+
+✅ **8. Navigation:**
+- "Rules" link in main nav
+- "Emergency" button always visible
+- "Violations" link in footer
+
+---
+
+**COPY ALL OF THIS INTO YOUR BOLT PROMPT.**
+**THE SYSTEM WILL BUILD WITH COMPLETE RULES AND HARSH MOTIVATION.**
+**EVERY PAGE WILL HAVE ACCOUNTABILITY.**
+**EMERGENCY PROTOCOL ALWAYS ACCESSIBLE.**
+**ZERO TOLERANCE ENFORCED.**
