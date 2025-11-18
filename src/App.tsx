@@ -24,9 +24,10 @@ import DailyAffirmations from './components/DailyAffirmations';
 import DailyScheduleView from './components/DailyScheduleView';
 import NotificationsView from './components/NotificationsView';
 import { SettingsView } from './components/SettingsView';
+import { TasksView } from './components/TasksView';
 import { exportAllData, downloadExport, importAllData } from './utils/fullExport';
 
-type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline' | 'resources' | 'notifications' | 'settings' | 'military' | 'combat' | 'affirmations' | 'daily';
+type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline' | 'resources' | 'notifications' | 'settings' | 'military' | 'combat' | 'affirmations' | 'daily' | 'tasks';
 
 function App() {
   const { user, loading: authLoading, signOut } = useAuth();
@@ -366,7 +367,7 @@ function App() {
     return <Login />;
   }
 
-  const isSoloLevelingView = currentView === 'combat' || currentView === 'affirmations' || currentView === 'daily' || currentView === 'schedule' || currentView === 'resources';
+  const isSoloLevelingView = currentView === 'combat' || currentView === 'affirmations' || currentView === 'daily' || currentView === 'schedule' || currentView === 'resources' || currentView === 'tasks';
 
   return (
     <div
@@ -426,6 +427,7 @@ function App() {
                 {currentView === 'combat' && 'Combat Mastery System'}
                 {currentView === 'affirmations' && 'Daily Affirmations'}
                 {currentView === 'daily' && 'Daily Schedule'}
+                {currentView === 'tasks' && 'Tasks'}
                 {currentView === 'settings' && 'Settings'}
               </h2>
               <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
@@ -525,6 +527,8 @@ function App() {
               {currentView === 'affirmations' && <DailyAffirmations />}
 
               {currentView === 'daily' && <DailyScheduleView initialDay={viewParams?.day} initialBlockId={viewParams?.blockId} />}
+
+              {currentView === 'tasks' && <TasksView />}
 
               {currentView === 'notifications' && <NotificationsView onNavigate={(view, params) => {
                 setCurrentView(view as View);
