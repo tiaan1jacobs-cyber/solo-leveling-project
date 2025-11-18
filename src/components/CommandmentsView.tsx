@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Shield, Flame, Sword, ChevronDown, ChevronRight, AlertTriangle } from 'lucide-react';
+import { Shield, Flame, Sword, ChevronDown, ChevronRight, AlertTriangle, BookOpen, ExternalLink } from 'lucide-react';
 import { Card, CardBody } from './ui/Card';
 import { Badge } from './ui/Badge';
 
@@ -37,6 +37,7 @@ const severityBadges = {
 
 export function CommandmentsView() {
   const [expandedCommandment, setExpandedCommandment] = useState<number | null>(null);
+  const [showFullContent, setShowFullContent] = useState(false);
 
   const toggleCommandment = (id: number) => {
     setExpandedCommandment(expandedCommandment === id ? null : id);
@@ -148,10 +149,20 @@ export function CommandmentsView() {
                           <Flame className="w-5 h-5" />
                           HARSH REALITY
                         </h4>
-                        <p className="text-sm text-red-800">
+                        <p className="text-sm text-red-800 mb-3">
                           Full brutal truth and context available in your detailed rules files. This commandment
                           is non-negotiable. Violation results in immediate penalties and loss of progress.
                         </p>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowFullContent(true);
+                          }}
+                          className="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium text-sm"
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          View Complete Rules
+                        </button>
                       </div>
 
                       <div className="p-4 bg-orange-50 rounded-lg border-2 border-orange-300">
@@ -216,9 +227,132 @@ export function CommandmentsView() {
               These commandments are your foundation. Break them and you break yourself. Keep them and you
               become unstoppable.
             </p>
+            <button
+              onClick={() => setShowFullContent(true)}
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-lg hover:from-red-700 hover:to-orange-700 transition-all font-bold text-sm shadow-lg hover:shadow-xl mt-4"
+            >
+              <BookOpen className="w-5 h-5" />
+              Read Full Rules Now
+              <ExternalLink className="w-4 h-4" />
+            </button>
           </div>
         </CardBody>
       </Card>
+
+      {/* Full Content Modal */}
+      {showFullContent && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-gray-900 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col border-2 border-red-500 shadow-2xl">
+            <div className="bg-gradient-to-r from-red-600 to-orange-600 p-6 rounded-t-2xl flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Shield className="w-8 h-8 text-white" />
+                <div>
+                  <h2 className="text-2xl font-bold text-white">THE 10 COMMANDMENTS</h2>
+                  <p className="text-sm text-white/80">Complete Nuclear Version - All Rules</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowFullContent(false)}
+                className="p-2 hover:bg-white/20 rounded-lg transition-colors"
+              >
+                <span className="text-white text-2xl font-bold">×</span>
+              </button>
+            </div>
+
+            <div className="p-6 overflow-y-auto flex-1 text-white">
+              <div className="space-y-8">
+                <div className="bg-red-900/30 border-2 border-red-500 rounded-lg p-4">
+                  <p className="text-red-300 font-bold text-sm">
+                    ⚠️ WARNING: This content contains harsh language and brutal truth. It's designed to break through excuses.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                      <span className="flex items-center justify-center w-8 h-8 bg-red-600 rounded-lg">1</span>
+                      COMMANDMENT 1: ZERO PORNOGRAPHY
+                    </h3>
+                    <div className="text-gray-300 space-y-3 text-sm leading-relaxed">
+                      <p className="font-bold text-red-400">FULL HARSH REALITY:</p>
+                      <p>You cannot build an empire with a brain that's been fried by pornography. Every single time you click, you're choosing to be weak. Your competition doesn't waste time on this - they're out there building businesses, training their bodies, developing skills, becoming DANGEROUS while you're draining yourself to pixels.</p>
+
+                      <p className="font-bold text-orange-400 mt-4">THE BRUTAL TRUTH:</p>
+                      <p>Your brain is DAMAGED. Your dopamine receptors are fried. Your reward system is hijacked. You need escalation just to feel ANYTHING. This is literal neurological damage you're choosing every single day.</p>
+
+                      <p className="font-bold text-yellow-400 mt-4">VIOLATION PENALTY:</p>
+                      <ul className="list-disc ml-6 space-y-1">
+                        <li>STREAK RESET TO DAY 0</li>
+                        <li>200 BURPEES IMMEDIATELY</li>
+                        <li>1,000 WORD ESSAY on why you chose weakness</li>
+                        <li>PUBLIC ACCOUNTABILITY</li>
+                        <li>LOSE ALL BUSINESS WARRIOR XP FOR THE WEEK</li>
+                        <li>NO PHONE FOR 3 DAYS</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                      <span className="flex items-center justify-center w-8 h-8 bg-red-600 rounded-lg">2</span>
+                      COMMANDMENT 2: WAKE AT 6:30 AM - NO SNOOZE
+                    </h3>
+                    <div className="text-gray-300 space-y-3 text-sm leading-relaxed">
+                      <p className="font-bold text-red-400">FULL HARSH REALITY:</p>
+                      <p>The snooze button is for weak men. Every single time you hit that button, you're training yourself to break promises to yourself. Every negotiation with yourself in the morning is practice for negotiating with yourself all day long.</p>
+
+                      <p className="font-bold text-orange-400 mt-4">THE BRUTAL TRUTH:</p>
+                      <p>The first decision of your day sets the tone for every decision after. You just decided to be weak. You just proved your word means nothing.</p>
+
+                      <p className="font-bold text-yellow-400 mt-4">VIOLATION PENALTY:</p>
+                      <ul className="list-disc ml-6 space-y-1">
+                        <li>50 BURPEES THE SECOND YOU GET UP</li>
+                        <li>NO BREAKFAST UNTIL BURPEES ARE DONE</li>
+                        <li>LOSE MENTAL FORTRESS XP FOR THE DAY</li>
+                        <li>TOMORROW YOU WAKE AT 6:00 AM (30 min earlier)</li>
+                        <li>NO CAFFEINE FOR 3 HOURS</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
+                      <span className="flex items-center justify-center w-8 h-8 bg-red-600 rounded-lg">3</span>
+                      COMMANDMENT 3: COLD WATER DAILY
+                    </h3>
+                    <div className="text-gray-300 space-y-3 text-sm leading-relaxed">
+                      <p className="font-bold text-red-400">FULL HARSH REALITY:</p>
+                      <p>Three minutes of cold water. That's it. Warriors embrace discomfort. Civilians avoid it. It's that simple. You can't handle 3 minutes of cold water? How do you expect to handle building a business? Fighting? Competing? Winning?</p>
+
+                      <p className="font-bold text-yellow-400 mt-4">VIOLATION PENALTY:</p>
+                      <ul className="list-disc ml-6 space-y-1">
+                        <li>NO HOT WATER FOR 3 DAYS - COLD ONLY</li>
+                        <li>100 BURPEES IMMEDIATELY</li>
+                        <li>LOSE MENTAL FORTRESS XP</li>
+                        <li>5-MINUTE COLD SHOWER TOMORROW</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                    <p className="text-center text-gray-400 italic">
+                      [View complete files for all 10 commandments with full details, penalties, and harsh reality checks]
+                    </p>
+                    <div className="mt-4 space-y-2">
+                      <p className="text-sm text-gray-500">Files contain complete versions:</p>
+                      <ul className="text-xs text-gray-600 ml-4">
+                        <li>• ALL_RULES_NUCLEAR_COMPLETE.txt</li>
+                        <li>• COMPLETE_RULES_AND_BRUTAL_REALITY.txt</li>
+                        <li>• INTEGRATION_GUIDE_RULES_AND_MOTIVATION.txt</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
