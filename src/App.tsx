@@ -25,9 +25,10 @@ import DailyScheduleView from './components/DailyScheduleView';
 import NotificationsView from './components/NotificationsView';
 import { SettingsView } from './components/SettingsView';
 import { TasksView } from './components/TasksView';
+import { CommandmentsView } from './components/CommandmentsView';
 import { exportAllData, downloadExport, importAllData } from './utils/fullExport';
 
-type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline' | 'resources' | 'notifications' | 'settings' | 'military' | 'combat' | 'affirmations' | 'daily' | 'tasks';
+type View = 'dashboard' | 'schedule' | 'progress' | 'ai-insights' | 'discipline' | 'resources' | 'notifications' | 'settings' | 'military' | 'combat' | 'affirmations' | 'daily' | 'tasks' | 'commandments';
 
 function App() {
   const { user, loading: authLoading, signOut } = useAuth();
@@ -367,7 +368,7 @@ function App() {
     return <Login />;
   }
 
-  const isSoloLevelingView = currentView === 'combat' || currentView === 'affirmations' || currentView === 'daily' || currentView === 'schedule' || currentView === 'resources' || currentView === 'tasks';
+  const isSoloLevelingView = currentView === 'combat' || currentView === 'affirmations' || currentView === 'daily' || currentView === 'schedule' || currentView === 'resources' || currentView === 'tasks' || currentView === 'commandments';
 
   return (
     <div
@@ -428,6 +429,7 @@ function App() {
                 {currentView === 'affirmations' && 'Daily Affirmations'}
                 {currentView === 'daily' && 'Daily Schedule'}
                 {currentView === 'tasks' && 'Tasks'}
+                {currentView === 'commandments' && 'The 10 Commandments'}
                 {currentView === 'settings' && 'Settings'}
               </h2>
               <p className={`text-sm ${darkMode ? 'text-slate-400' : 'text-gray-600'}`}>
@@ -529,6 +531,8 @@ function App() {
               {currentView === 'daily' && <DailyScheduleView initialDay={viewParams?.day} initialBlockId={viewParams?.blockId} />}
 
               {currentView === 'tasks' && <TasksView />}
+
+              {currentView === 'commandments' && <CommandmentsView />}
 
               {currentView === 'notifications' && <NotificationsView onNavigate={(view, params) => {
                 setCurrentView(view as View);

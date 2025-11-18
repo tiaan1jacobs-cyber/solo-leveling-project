@@ -36,6 +36,7 @@ export function PremiumSidebar({ currentView, onViewChange, collapsed, onToggleC
     { id: 'combat', label: 'Combat Skills', icon: Target, badge: 'NEW' },
     { id: 'affirmations', label: 'I AM Declarations', icon: Sparkles, badge: 'NEW' },
     { id: 'tasks', label: 'Tasks', icon: ListChecks, badge: '19' },
+    { id: 'commandments', label: 'Commandments', icon: Shield, badge: '10' },
     { id: 'progress', label: 'Analytics', icon: TrendingUp, badge: null },
     { id: 'ai-insights', label: 'AI Insights', icon: Brain, badge: '2' },
     { id: 'discipline', label: 'Discipline', icon: Shield, badge: '3' },
