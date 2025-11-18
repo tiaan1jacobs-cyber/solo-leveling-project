@@ -174,7 +174,7 @@ export function EnhancedDisciplineTracker() {
                           {violationsByRule.get(rule.rule_number)} violations
                         </Badge>
                       </div>
-                      <h4 className="font-bold text-gray-900">{rule.title}</h4>
+                      <h4 className="font-bold text-blue-600">{rule.title}</h4>
                       <p className="text-sm text-gray-600 mt-1">{rule.description}</p>
                     </div>
                   </div>
@@ -248,7 +248,7 @@ export function EnhancedDisciplineTracker() {
                           <Badge variant="warning" size="sm">{violations} violation{violations > 1 ? 's' : ''}</Badge>
                         )}
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{rule.title}</h4>
+                      <h4 className="text-lg font-bold text-blue-600 mb-1">{rule.title}</h4>
                       <p className="text-sm text-gray-700 mb-2">{rule.description}</p>
                       <div className="p-3 bg-blue-50 rounded-lg border border-blue-200 mt-3">
                         <p className="text-sm text-blue-900">
@@ -295,7 +295,7 @@ export function EnhancedDisciplineTracker() {
                         <span className="text-sm text-gray-600">{format(new Date(violation.violationDate), 'MMM d, yyyy')}</span>
                         <Badge variant="warning" size="sm">Offense {violation.offenseCount}</Badge>
                       </div>
-                      <h4 className="font-bold text-gray-900 mb-1">{violation.ruleTitle}</h4>
+                      <h4 className="font-bold text-blue-600 mb-1">{violation.ruleTitle}</h4>
                       <p className="text-sm text-gray-700 mb-2">
                         <strong>Consequence:</strong> {violation.consequenceApplied}
                       </p>
