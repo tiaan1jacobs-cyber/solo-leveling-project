@@ -1,0 +1,1021 @@
+# REVISED BOLT PROMPT - WORKING BUTTONS & TASK FLOW
+## Complete System with Proper Navigation and Time-Specific Content
+
+---
+
+Create a daily schedule and solo leveling website with **WORKING BUTTONS** that guide you through each task step-by-step.
+
+---
+
+## **CRITICAL: BUTTON & FLOW REQUIREMENTS**
+
+### **How the System Works:**
+
+1. **Main Dashboard** shows current time block and next task
+2. Click **"Start Task"** button → Opens task modal with full instructions
+3. Complete steps in task modal
+4. Click **"Mark Complete & Claim XP"** → Awards XP, checks off task, moves to next
+5. **"Next Task"** button automatically highlights next thing to do
+6. Flow through entire day seamlessly
+
+### **Every Task Button Must:**
+- Open detailed modal with step-by-step instructions
+- Show affirmations/declarations for that specific time
+- Have clear completion criteria
+- Award correct XP to correct stat
+- Check off the task in checklist
+- Auto-advance to next task
+- Save progress to localStorage
+
+---
+
+## **MAIN DASHBOARD LAYOUT**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  APEX OPERATOR COMMAND CENTER                               │
+│                                                             │
+│  Current Time: 6:35 AM                                      │
+│  Current Streak: 42 days                                    │
+│  Today's XP: 20 / 500 possible                             │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  🎯 CURRENT TASK:                                           │
+│                                                             │
+│  ┌───────────────────────────────────────────────────────┐ │
+│  │  ⏰ 6:30 AM - COLD SHOWER PROTOCOL                    │ │
+│  │                                                       │ │
+│  │  Status: IN PROGRESS                                  │ │
+│  │  Time Required: 3 minutes                             │ │
+│  │  XP Reward: 10 XP → Mental Fortress                  │ │
+│  │                                                       │ │
+│  │  [📋 View Full Instructions]                          │ │
+│  │  [✓ Mark Complete & Claim 10 XP]                     │ │
+│  └───────────────────────────────────────────────────────┘ │
+│                                                             │
+│  ⏭️ NEXT UP:                                                │
+│  7:00 AM - Meditation + Cycling Mantras (20 min)           │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  📊 TODAY'S PROGRESS:                                       │
+│  [████░░░░░░░░░░░░] 20%                                    │
+│                                                             │
+│  ✓ Wake 6:30 AM + Core Declarations                        │
+│  ✓ Stand up within 5 seconds                               │
+│  🔄 Cold Shower (IN PROGRESS)                              │
+│  ☐ Meditation + Mantras                                    │
+│  ☐ Breakfast + Fuel Affirmations                           │
+│  ... 25 more tasks                                         │
+│                                                             │
+│  [View Full Schedule] [Character Stats] [Quest Board]      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## **TASK FLOW - STEP BY STEP**
+
+### **TASK 1: WAKE UP (6:30 AM)**
+
+**Main Dashboard Button:**
+```
+┌───────────────────────────────────────────────────────┐
+│  ⏰ 6:30 AM - WAKE UP PROTOCOL                        │
+│  Status: READY TO START                               │
+│  [🚀 START TASK]                                      │
+└───────────────────────────────────────────────────────┘
+```
+
+**Click "START TASK" → Opens Modal:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  TASK 1: WAKE UP PROTOCOL                                   │
+│  Time: 6:30 AM                                              │
+│  XP Reward: 20 XP → Mental Fortress                         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  🎯 YOUR MISSION:                                           │
+│  Wake up immediately when alarm sounds. No snooze.          │
+│  Stand up within 5 seconds. Declare your identity.          │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  STEP-BY-STEP INSTRUCTIONS:                                 │
+│                                                             │
+│  STEP 1: ALARM SOUNDS                                       │
+│  ☐ Alarm goes off at 6:30 AM                               │
+│  ☐ Eyes open immediately                                    │
+│  ☐ NO snooze button                                         │
+│  ☐ NO "just 5 more minutes"                                │
+│  ☐ NO negotiation                                           │
+│                                                             │
+│  STEP 2: IMMEDIATE ACTION                                   │
+│  ☐ Throw covers off                                         │
+│  ☐ Swing legs out of bed                                    │
+│  ☐ Plant feet on floor                                      │
+│  ☐ STAND UP within 5 seconds                               │
+│  (Count: 1... 2... 3... 4... 5... UP!)                     │
+│                                                             │
+│  STEP 3: CORE DECLARATIONS (SAY OUT LOUD)                  │
+│                                                             │
+│  Stand straight, shoulders back, voice LOUD and clear:      │
+│                                                             │
+│  ☐ "I AM a warrior in complete control of my mind          │
+│     and body"                                               │
+│                                                             │
+│  ☐ "I AM disciplined beyond what others think is           │
+│     possible"                                               │
+│                                                             │
+│  ☐ "I AM building an empire while others sleep"            │
+│                                                             │
+│  ☐ "I AM earning $5,000 per month through my AI            │
+│     business"                                               │
+│                                                             │
+│  ☐ "I AM a Templar - discipline is my worship"             │
+│                                                             │
+│  ☐ "I AM unstoppable in my pursuit of mastery"             │
+│                                                             │
+│  ☐ "I AM the man who keeps every promise to himself"       │
+│                                                             │
+│  [🔊 Play Audio Guide] (Optional)                          │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  ✅ COMPLETION CHECKLIST:                                   │
+│  ☐ I woke at 6:30 AM (no snooze)                           │
+│  ☐ I stood up within 5 seconds                             │
+│  ☐ I said ALL 7 declarations OUT LOUD                      │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  💡 WHY THIS MATTERS:                                       │
+│  The first decision of your day sets the tone. Snoozing    │
+│  is training yourself to be weak. Standing immediately is   │
+│  training yourself to be elite. Every morning you prove     │
+│  who you are.                                               │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  [✓ COMPLETE TASK & CLAIM 20 XP]                           │
+│  [← Back to Dashboard]                                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Click "COMPLETE TASK & CLAIM 20 XP" → System does:**
+1. ✅ Checks off "Wake Up" in today's checklist
+2. ✅ Awards 20 XP to Mental Fortress stat
+3. ✅ Updates progress bar (20 XP / 500)
+4. ✅ Saves to localStorage with timestamp
+5. ✅ Closes modal
+6. ✅ Dashboard now shows NEXT task (Cold Shower)
+7. ✅ Shows completion animation
+
+---
+
+### **TASK 2: COLD SHOWER (6:30 AM - 3 minutes)**
+
+**Main Dashboard Button:**
+```
+┌───────────────────────────────────────────────────────┐
+│  🚿 COLD SHOWER PROTOCOL                              │
+│  Status: READY TO START                               │
+│  [🚀 START TASK]                                      │
+└───────────────────────────────────────────────────────┘
+```
+
+**Click "START TASK" → Opens Modal:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  TASK 2: COLD SHOWER PROTOCOL                               │
+│  Time: 6:30 AM (Right after wake up)                        │
+│  Duration: 3 minutes                                        │
+│  XP Reward: 10 XP → Mental Fortress                         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  🎯 YOUR MISSION:                                           │
+│  Master discomfort. Forge unbreakable willpower.           │
+│  3 minutes of coldest water. No warm-up.                    │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  STEP-BY-STEP INSTRUCTIONS:                                 │
+│                                                             │
+│  STEP 1: PREPARATION                                        │
+│  ☐ Go directly to bathroom (no delays)                     │
+│  ☐ Turn shower to COLDEST setting                          │
+│  ☐ No warm water first - start cold                        │
+│  ☐ Strip down                                               │
+│  ☐ Take deep breath                                         │
+│                                                             │
+│  STEP 2: ENTRY                                              │
+│  ☐ Step under water immediately                            │
+│  ☐ Full body under stream                                  │
+│  ☐ Don't ease in - commit fully                            │
+│  ☐ Control your breathing                                  │
+│                                                             │
+│  STEP 3: MANTRAS (Say 3 times WHILE in cold water)         │
+│                                                             │
+│  Say these OUT LOUD while water hits you:                   │
+│                                                             │
+│  ☐ "I AM mastering discomfort"                             │
+│                                                             │
+│  ☐ "I AM forging unbreakable willpower"                    │
+│                                                             │
+│  ☐ "I AM in complete control"                              │
+│                                                             │
+│  ☐ "I AM strengthening my mind with every second"          │
+│                                                             │
+│  (Repeat all 4 mantras THREE TIMES total)                  │
+│                                                             │
+│  STEP 4: TIMER                                              │
+│  ☐ Stay under cold water for FULL 3 minutes                │
+│  [⏱️ START 3-MINUTE TIMER]                                 │
+│                                                             │
+│  STEP 5: BREATHING                                          │
+│  While in shower:                                           │
+│  ☐ Deep breath in through nose (4 seconds)                 │
+│  ☐ Hold (2 seconds)                                         │
+│  ☐ Exhale through mouth (6 seconds)                        │
+│  ☐ Repeat - stay calm                                       │
+│                                                             │
+│  STEP 6: COMPLETION                                         │
+│  ☐ Timer hits 3:00                                          │
+│  ☐ Turn off water                                           │
+│  ☐ Exit with pride                                          │
+│  ☐ Say: "I AM victorious"                                  │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  ✅ COMPLETION CHECKLIST:                                   │
+│  ☐ Water was COLDEST setting (no warm)                     │
+│  ☐ Full 3 minutes completed                                │
+│  ☐ Said all 4 mantras 3 times OUT LOUD                     │
+│  ☐ Controlled breathing throughout                         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  💡 WHY THIS MATTERS:                                       │
+│  Cold exposure trains your nervous system to stay calm     │
+│  under stress. Every second under cold water is building   │
+│  discipline you'll use in business, combat, and life.      │
+│  This is not about showering - this is warrior training.   │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  [✓ COMPLETE TASK & CLAIM 10 XP]                           │
+│  [← Back to Dashboard]                                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Click "COMPLETE TASK & CLAIM 10 XP" → System does:**
+1. ✅ Checks off "Cold Shower" in checklist
+2. ✅ Awards 10 XP to Mental Fortress
+3. ✅ Updates progress bar (30 XP / 500)
+4. ✅ Saves with timestamp
+5. ✅ Shows next task (Meditation)
+
+---
+
+### **TASK 3: MEDITATION (7:00 AM - 20 minutes)**
+
+**Main Dashboard Button:**
+```
+┌───────────────────────────────────────────────────────┐
+│  🧘 MEDITATION + CYCLING MANTRAS                      │
+│  Status: READY TO START                               │
+│  [🚀 START TASK]                                      │
+└───────────────────────────────────────────────────────┘
+```
+
+**Click "START TASK" → Opens Modal:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  TASK 3: MEDITATION + CYCLING MANTRAS                       │
+│  Time: 7:00 AM                                              │
+│  Duration: 20 minutes                                       │
+│  XP Reward: 10 XP → Mental Fortress                         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  🎯 YOUR MISSION:                                           │
+│  Build mental clarity and focus. Reinforce identity        │
+│  through mantra cycling. Train your mind for peak          │
+│  performance.                                               │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  STEP-BY-STEP INSTRUCTIONS:                                 │
+│                                                             │
+│  STEP 1: SETUP                                              │
+│  ☐ Find quiet space                                         │
+│  ☐ Sit in comfortable position (chair or floor)            │
+│  ☐ Back straight, shoulders relaxed                        │
+│  ☐ Hands resting on knees or lap                           │
+│  ☐ Close eyes                                               │
+│  ☐ Set timer for 20 minutes                                │
+│  [⏱️ START 20-MINUTE TIMER]                                │
+│                                                             │
+│  STEP 2: BREATHING                                          │
+│  ☐ Breathe naturally through nose                          │
+│  ☐ Notice breath without controlling it                    │
+│  ☐ Focus on sensation of air                               │
+│  ☐ When mind wanders, return to breath                     │
+│                                                             │
+│  STEP 3: CYCLING MANTRAS (Every 2 minutes)                 │
+│                                                             │
+│  The timer will alert you every 2 minutes to cycle         │
+│  to the next mantra. Say each mantra silently in your      │
+│  mind with each breath.                                     │
+│                                                             │
+│  MINUTES 0-2: "I AM focused"                               │
+│  ☐ Repeat silently: "I AM focused"                         │
+│  ☐ With each breath: "I AM focused"                        │
+│                                                             │
+│  MINUTES 2-4: "I AM disciplined"                           │
+│  ☐ Repeat silently: "I AM disciplined"                     │
+│                                                             │
+│  MINUTES 4-6: "I AM dangerous"                             │
+│  ☐ Repeat silently: "I AM dangerous"                       │
+│                                                             │
+│  MINUTES 6-8: "I AM relentless"                            │
+│  ☐ Repeat silently: "I AM relentless"                      │
+│                                                             │
+│  MINUTES 8-10: "I AM elite"                                │
+│  ☐ Repeat silently: "I AM elite"                           │
+│                                                             │
+│  MINUTES 10-12: "I AM unstoppable"                         │
+│  ☐ Repeat silently: "I AM unstoppable"                     │
+│                                                             │
+│  MINUTES 12-14: "I AM a weapon"                            │
+│  ☐ Repeat silently: "I AM a weapon"                        │
+│                                                             │
+│  MINUTES 14-16: "I AM strategic"                           │
+│  ☐ Repeat silently: "I AM strategic"                       │
+│                                                             │
+│  MINUTES 16-18: "I AM BECOMING"                            │
+│  ☐ Repeat silently: "I AM BECOMING"                        │
+│                                                             │
+│  MINUTES 18-20: "I AM ready"                               │
+│  ☐ Repeat silently: "I AM ready"                           │
+│                                                             │
+│  [🔔 Enable 2-Minute Interval Chimes]                      │
+│                                                             │
+│  STEP 4: HANDLING THOUGHTS                                  │
+│  ☐ When thoughts arise, acknowledge them                   │
+│  ☐ Don't fight them, don't follow them                     │
+│  ☐ Return to current mantra                                │
+│  ☐ Be patient with yourself                                │
+│                                                             │
+│  STEP 5: COMPLETION                                         │
+│  ☐ Timer ends at 20 minutes                                │
+│  ☐ Take 3 deep breaths                                     │
+│  ☐ Slowly open eyes                                         │
+│  ☐ Say once out loud: "I AM ready for today"              │
+│  ☐ Stand up slowly                                          │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  ✅ COMPLETION CHECKLIST:                                   │
+│  ☐ Full 20 minutes completed                               │
+│  ☐ Cycled through all 10 mantras                           │
+│  ☐ Maintained focus (mostly)                               │
+│  ☐ Ended with "I AM ready for today"                       │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  💡 WHY THIS MATTERS:                                       │
+│  This isn't just meditation - it's identity programming.   │
+│  Every mantra reinforces who you are becoming. Your        │
+│  subconscious mind is listening. You're training neural    │
+│  pathways. This 20 minutes shapes your entire day.         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  [✓ COMPLETE TASK & CLAIM 10 XP]                           │
+│  [← Back to Dashboard]                                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### **TASK 4: BREAKFAST + FUEL AFFIRMATIONS (7:20 AM)**
+
+**Main Dashboard Button:**
+```
+┌───────────────────────────────────────────────────────┐
+│  🍳 BREAKFAST + FUEL AFFIRMATIONS                     │
+│  Status: READY TO START                               │
+│  [🚀 START TASK]                                      │
+└───────────────────────────────────────────────────────┘
+```
+
+**Click "START TASK" → Opens Modal:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  TASK 4: BREAKFAST + FUEL AFFIRMATIONS                      │
+│  Time: 7:20 AM                                              │
+│  Duration: 20 minutes                                       │
+│  XP Reward: 10 XP → Mental Fortress                         │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  🎯 YOUR MISSION:                                           │
+│  Fuel your body with purpose. Every meal is a choice       │
+│  about who you're becoming. Eat like a warrior.            │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  STEP 1: MEAL PREPARATION                                   │
+│                                                             │
+│  Choose ONE of these optimized breakfasts:                  │
+│                                                             │
+│  OPTION A: Protein Power                                    │
+│  ☐ 3-4 whole eggs (scrambled or fried)                     │
+│  ☐ 2 slices whole grain toast                              │
+│  ☐ 1 cup oatmeal with berries                              │
+│  ☐ Black coffee or green tea                               │
+│                                                             │
+│  OPTION B: Quick Warrior                                    │
+│  ☐ Protein shake (30g protein)                             │
+│  ☐ Banana                                                   │
+│  ☐ Handful of nuts                                          │
+│  ☐ Black coffee                                             │
+│                                                             │
+│  OPTION C: Champion's Breakfast                             │
+│  ☐ 3-egg omelet with vegetables                            │
+│  ☐ Greek yogurt with granola                               │
+│  ☐ Orange juice                                             │
+│  ☐ Black coffee                                             │
+│                                                             │
+│  STEP 2: FIREBLOOD SUPPLEMENT                               │
+│  ☐ Take 1 serving of Fireblood (as directed)               │
+│  ☐ With first bites of food                                │
+│  ☐ Full glass of water                                      │
+│                                                             │
+│  STEP 3: FUEL AFFIRMATIONS (Before eating)                 │
+│                                                             │
+│  Stand or sit with food in front of you.                   │
+│  Say these OUT LOUD:                                        │
+│                                                             │
+│  ☐ "This food is fuel for my warrior body"                 │
+│                                                             │
+│  ☐ "I AM feeding elite performance"                        │
+│                                                             │
+│  ☐ "I AM building strength with every bite"                │
+│                                                             │
+│  ☐ "I AM optimized for domination"                         │
+│                                                             │
+│  ☐ "This meal supports my $5,000/month business"           │
+│                                                             │
+│  ☐ "I AM fueling my ascent to apex"                        │
+│                                                             │
+│  STEP 4: MINDFUL EATING                                     │
+│  ☐ Sit down to eat (no standing)                           │
+│  ☐ No phone scrolling                                       │
+│  ☐ No TV or distractions                                    │
+│  ☐ Chew thoroughly                                          │
+│  ☐ Taste your food                                          │
+│  ☐ Eat with purpose and gratitude                          │
+│                                                             │
+│  STEP 5: HYDRATION                                          │
+│  ☐ Drink 16 oz (500mL) water with meal                     │
+│  ☐ No sugary drinks                                         │
+│  ☐ Black coffee is fine                                     │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  ✅ COMPLETION CHECKLIST:                                   │
+│  ☐ Ate complete breakfast (protein + carbs)                │
+│  ☐ Took Fireblood supplement                               │
+│  ☐ Said all 6 fuel affirmations OUT LOUD                   │
+│  ☐ Ate mindfully (no phone)                                │
+│  ☐ Drank 16 oz water                                        │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  💡 WHY THIS MATTERS:                                       │
+│  Nutrition is not optional for elite performance. Your     │
+│  body is a weapon - you must maintain it. Every meal is    │
+│  either bringing you closer to apex or holding you back.   │
+│  Warriors eat with purpose.                                │
+│                                                             │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│                                                             │
+│  [✓ COMPLETE TASK & CLAIM 10 XP]                           │
+│  [← Back to Dashboard]                                      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## **CONTINUE THIS PATTERN FOR ALL TASKS**
+
+Create similar detailed task modals for:
+
+- 7:45 AM: Morning Skills (Intelligence/Occult/Tradecraft)
+- 8:30 AM: Work Block (Business/Academic based on day)
+- 12:00 PM: Lunch + Performance Affirmations
+- 2:30 PM: Pre-Tennis Warrior Mantras
+- 3:00 PM: Tennis Practice Start
+- 5:30 PM: Dinner + Recovery Affirmations
+- 6:30 PM: Combat Training (day-specific)
+- Evening work blocks
+- 11:30 PM: Evening Reflection
+- 12:00 AM: Bed Protocol
+
+---
+
+## **BUTTON SYSTEM - TECHNICAL IMPLEMENTATION**
+
+### **React Component Structure:**
+
+```javascript
+// Main state
+const [currentTask, setCurrentTask] = useState(null);
+const [completedTasks, setCompletedTasks] = useState([]);
+const [todayXP, setTodayXP] = useState(0);
+
+// Task data structure
+const tasks = [
+  {
+    id: 1,
+    time: "6:30 AM",
+    name: "Wake Up Protocol",
+    duration: "5 minutes",
+    xpReward: 20,
+    stat: "mental",
+    steps: [
+      { id: 1, text: "Alarm goes off", checked: false },
+      { id: 2, text: "Stand up within 5 seconds", checked: false },
+      { id: 3, text: "Say all 7 core declarations OUT LOUD", checked: false }
+    ],
+    affirmations: [
+      "I AM a warrior in complete control of my mind and body",
+      "I AM disciplined beyond what others think is possible",
+      // ... all 7 declarations
+    ],
+    completionCriteria: [
+      "Woke at 6:30 AM (no snooze)",
+      "Stood up within 5 seconds",
+      "Said all 7 declarations OUT LOUD"
+    ]
+  },
+  {
+    id: 2,
+    time: "6:30 AM",
+    name: "Cold Shower Protocol",
+    duration: "3 minutes",
+    xpReward: 10,
+    stat: "mental",
+    // ... full task details
+  },
+  // ... all other tasks
+];
+
+// Open task modal
+function openTask(taskId) {
+  const task = tasks.find(t => t.id === taskId);
+  setCurrentTask(task);
+}
+
+// Complete task
+function completeTask(taskId) {
+  const task = tasks.find(t => t.id === taskId);
+  
+  // Award XP
+  awardXP(task.stat, task.xpReward);
+  
+  // Mark complete
+  setCompletedTasks([...completedTasks, taskId]);
+  
+  // Save to localStorage
+  saveProgress();
+  
+  // Close modal
+  setCurrentTask(null);
+  
+  // Show success animation
+  showCompletionAnimation(task);
+  
+  // Auto-advance to next task
+  highlightNextTask();
+}
+
+// Award XP function
+function awardXP(stat, amount) {
+  setTodayXP(todayXP + amount);
+  
+  // Update stat
+  setUserData(prev => {
+    const newXP = prev.stats[stat].currentXP + amount;
+    const xpNeeded = prev.stats[stat].level * 100;
+    
+    // Check for level up
+    if (newXP >= xpNeeded) {
+      const remainingXP = newXP - xpNeeded;
+      const newLevel = prev.stats[stat].level + 1;
+      
+      // Show level up animation
+      showLevelUp(stat, newLevel);
+      
+      return {
+        ...prev,
+        stats: {
+          ...prev.stats,
+          [stat]: {
+            level: newLevel,
+            currentXP: remainingXP,
+            totalXP: prev.stats[stat].totalXP + amount
+          }
+        }
+      };
+    }
+    
+    // No level up, just add XP
+    return {
+      ...prev,
+      stats: {
+        ...prev.stats,
+        [stat]: {
+          ...prev.stats[stat],
+          currentXP: newXP,
+          totalXP: prev.stats[stat].totalXP + amount
+        }
+      }
+    };
+  });
+  
+  // Save immediately
+  localStorage.setItem('apexData', JSON.stringify(userData));
+}
+```
+
+### **Task Modal Component:**
+
+```jsx
+function TaskModal({ task, onComplete, onClose }) {
+  const [stepsChecked, setStepsChecked] = useState(
+    task.steps.map(() => false)
+  );
+  
+  const allStepsComplete = stepsChecked.every(checked => checked);
+  
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2>{task.name}</h2>
+        <p>Time: {task.time}</p>
+        <p>XP Reward: {task.xpReward} XP → {task.stat}</p>
+        
+        <div className="steps">
+          {task.steps.map((step, index) => (
+            <label key={step.id}>
+              <input
+                type="checkbox"
+                checked={stepsChecked[index]}
+                onChange={(e) => {
+                  const newChecked = [...stepsChecked];
+                  newChecked[index] = e.target.checked;
+                  setStepsChecked(newChecked);
+                }}
+              />
+              {step.text}
+            </label>
+          ))}
+        </div>
+        
+        {task.affirmations && (
+          <div className="affirmations">
+            <h3>Say Out Loud:</h3>
+            {task.affirmations.map((aff, i) => (
+              <p key={i}>{aff}</p>
+            ))}
+          </div>
+        )}
+        
+        <button
+          onClick={() => onComplete(task.id)}
+          disabled={!allStepsComplete}
+          className={allStepsComplete ? "complete-btn" : "complete-btn-disabled"}
+        >
+          {allStepsComplete 
+            ? `✓ COMPLETE TASK & CLAIM ${task.xpReward} XP`
+            : "Complete all steps first"}
+        </button>
+        
+        <button onClick={onClose}>← Back to Dashboard</button>
+      </div>
+    </div>
+  );
+}
+```
+
+### **Dashboard Component:**
+
+```jsx
+function Dashboard() {
+  const [currentTask, setCurrentTask] = useState(null);
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentMinute = now.getMinutes();
+  
+  // Find current task based on time
+  const activeTask = tasks.find(task => {
+    const [taskHour, taskMinute] = parseTime(task.time);
+    return currentHour === taskHour && currentMinute >= taskMinute;
+  });
+  
+  // Find next task
+  const nextTask = tasks.find(task => {
+    const [taskHour, taskMinute] = parseTime(task.time);
+    return taskHour > currentHour || 
+           (taskHour === currentHour && taskMinute > currentMinute);
+  });
+  
+  return (
+    <div className="dashboard">
+      <h1>APEX OPERATOR COMMAND CENTER</h1>
+      
+      <div className="current-time">
+        Current Time: {now.toLocaleTimeString()}
+      </div>
+      
+      <div className="current-task">
+        <h2>🎯 CURRENT TASK:</h2>
+        {activeTask && (
+          <div className="task-card">
+            <h3>{activeTask.name}</h3>
+            <p>Time: {activeTask.time}</p>
+            <p>XP Reward: {activeTask.xpReward} XP</p>
+            <button onClick={() => setCurrentTask(activeTask)}>
+              📋 View Full Instructions
+            </button>
+            <button onClick={() => completeTask(activeTask.id)}>
+              ✓ Mark Complete & Claim {activeTask.xpReward} XP
+            </button>
+          </div>
+        )}
+      </div>
+      
+      <div className="next-task">
+        <h3>⏭️ NEXT UP:</h3>
+        {nextTask && (
+          <p>{nextTask.time} - {nextTask.name}</p>
+        )}
+      </div>
+      
+      <div className="progress">
+        <h3>📊 TODAY'S PROGRESS:</h3>
+        <ProgressBar value={todayXP} max={500} />
+        <p>{todayXP} / 500 XP</p>
+      </div>
+      
+      <div className="checklist">
+        {tasks.map(task => (
+          <div key={task.id} className="checklist-item">
+            {completedTasks.includes(task.id) ? "✓" : "☐"}
+            {task.name}
+          </div>
+        ))}
+      </div>
+      
+      {currentTask && (
+        <TaskModal
+          task={currentTask}
+          onComplete={completeTask}
+          onClose={() => setCurrentTask(null)}
+        />
+      )}
+    </div>
+  );
+}
+```
+
+---
+
+## **KEY FEATURES TO IMPLEMENT**
+
+### **1. Auto-Detection of Current Task:**
+- Check current time
+- Highlight task that should be done now
+- Show "START TASK" button in green
+- Gray out past tasks
+- Lock future tasks
+
+### **2. Task Flow:**
+- Click "START TASK" → Opens full modal
+- Modal shows step-by-step instructions
+- Modal shows affirmations for that time
+- Modal shows completion checklist
+- Must check all items before completing
+- Click "COMPLETE & CLAIM XP" → Awards XP, closes modal, advances to next
+
+### **3. Progress Tracking:**
+- Visual progress bar
+- XP counter increases in real-time
+- Checklist items check off
+- Completed tasks show ✓
+- Current task highlighted
+- Next task preview
+
+### **4. Data Persistence:**
+- Every completion saves to localStorage
+- Timestamp recorded
+- XP awarded saved
+- Stats updated saved
+- Can't lose progress
+
+### **5. Completion Animations:**
+- XP number counts up
+- Progress bar fills
+- Check mark appears
+- Brief celebration (but serious/dark aesthetic)
+- Level up animation if threshold reached
+
+---
+
+## **COMPLETE DAILY TASK LIST**
+
+Create full task modals for ALL of these:
+
+**MORNING (6:30-8:30 AM):**
+1. Wake Up Protocol (20 XP)
+2. Cold Shower (10 XP)
+3. Meditation + Mantras (10 XP)
+4. Breakfast + Fuel Affirmations (10 XP)
+5. Morning Skills - varies by day (10 XP)
+
+**WORK BLOCKS (8:30 AM-12:00 PM):**
+6. Business Deep Work / Classes (varies by day) (20 XP)
+7. Hourly Business Mantras (10 XP per hour)
+
+**MIDDAY (12:00-3:00 PM):**
+8. Lunch + Performance Affirmations (10 XP)
+9. Pre-Tennis Preparation (10 XP)
+
+**TENNIS (3:00-5:30 PM):**
+10. Tennis Practice (30 XP)
+11. Tennis Hydration Protocol (10 XP)
+
+**EVENING (5:30-9:30 PM):**
+12. Dinner + Recovery Affirmations (10 XP)
+13. Combat Training - varies by day (20-30 XP)
+14. DA Job Productivity (10 XP)
+15. Evening Work Block (10 XP)
+
+**NIGHT (11:30 PM-12:00 AM):**
+16. Evening Reflection + Stretching (10 XP)
+17. Tomorrow Planning (10 XP)
+18. Bed by Midnight + Final Declarations (10 XP)
+
+**CRITICAL:**
+19. No Porn - Zero Tolerance (10 XP)
+
+**TOTAL POSSIBLE DAILY XP: 350-400 XP**
+
+---
+
+## **SPECIAL TASK TYPES**
+
+### **Intelligence Operative Quests:**
+- "The Observer" button opens full observation exercise
+- "Memory Snapshot" button opens vehicle memory drill
+- "Digital Footprint" button opens OSINT research task
+- Each has step-by-step instructions
+- Awards 10 XP to Intelligence stat
+
+### **Combat Training:**
+- Day-specific (Monday=Weapons, Tuesday=Striking, etc.)
+- Opens workout with pre-training affirmations
+- Shows exercise list with checkboxes
+- Timer for rounds
+- Awards 20-30 XP to Combat stat
+
+### **Business Tasks:**
+- "The Prospector" - Lead generation with counter
+- "The Outreach" - Email tracker
+- "The Closer" - Call log
+- Each awards 10 XP to Business stat
+
+---
+
+## **MOBILE OPTIMIZATION**
+
+### **Mobile Layout:**
+- Current task full-width card at top
+- Big "START TASK" button
+- Simple swipe to next task
+- Bottom navigation bar
+- Task modals full-screen on mobile
+- Easy checkbox tapping
+- Large text for affirmations
+
+### **Quick Actions:**
+- Swipe right: Complete task
+- Swipe left: Skip to next
+- Tap task: Open details
+- Long press: Mark as skipped
+
+---
+
+## **ERROR HANDLING**
+
+### **If User Tries to Skip:**
+```
+┌─────────────────────────────────────────────┐
+│  ⚠️ WARNING                                 │
+│                                             │
+│  You're trying to mark this task complete   │
+│  without doing it.                          │
+│                                             │
+│  This system only works if you're honest.   │
+│                                             │
+│  Did you actually complete this task?       │
+│                                             │
+│  [Yes, I completed it] [No, go back]        │
+└─────────────────────────────────────────────┘
+```
+
+### **If Task Missed:**
+```
+┌─────────────────────────────────────────────┐
+│  📊 MISSED TASK DETECTED                    │
+│                                             │
+│  You missed: Cold Shower (6:30 AM)          │
+│                                             │
+│  Options:                                   │
+│  [Complete it now] [Mark as missed]         │
+│                                             │
+│  Note: Missing tasks breaks your streak     │
+│  and reduces daily XP                       │
+└─────────────────────────────────────────────┘
+```
+
+---
+
+## **FINAL IMPLEMENTATION CHECKLIST**
+
+For Bolt to build properly:
+
+✅ **All tasks have:**
+- Unique ID
+- Exact time
+- Full name
+- Step-by-step instructions
+- Affirmations (if applicable)
+- Completion checklist
+- XP reward amount
+- Target stat
+
+✅ **All buttons:**
+- "START TASK" - Opens modal
+- "COMPLETE & CLAIM XP" - Awards XP, closes modal, advances
+- "Back to Dashboard" - Closes modal without completing
+- Each button has clear onClick handler
+
+✅ **All modals:**
+- Full instructions visible
+- Checkboxes for each step
+- Affirmations displayed clearly
+- Can't complete until all checked
+- Saves progress on completion
+
+✅ **Data flow:**
+- localStorage saves everything
+- XP updates in real-time
+- Progress bar reflects current total
+- Checklist updates immediately
+- Stats increase properly
+- Level-ups trigger correctly
+
+✅ **Navigation:**
+- Auto-detects current task
+- Highlights what's next
+- Can go back to previous tasks
+- Can view upcoming tasks
+- Can't complete future tasks early
+
+---
+
+**THIS IS THE COMPLETE WORKING SYSTEM.**
+
+**Copy this ENTIRE prompt to Bolt.**
+**It will create a fully functional task-by-task flow system.**
+**Every button will work.**
+**Every task will have full instructions.**
+**Every completion will award XP.**
+**Everything will save.**
+
+**BUILD IT NOW AND START EXECUTING.**
