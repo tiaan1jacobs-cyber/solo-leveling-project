@@ -140,7 +140,7 @@ export function EnhancedProgressDashboard({ blocks, completedBlocks, streak }: E
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card>
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <TrendingUp className="w-6 h-6 text-blue-600" />
               Weekly Completion Trend
             </h3>
@@ -174,7 +174,7 @@ export function EnhancedProgressDashboard({ blocks, completedBlocks, streak }: E
 
         <Card>
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <Target className="w-6 h-6 text-green-600" />
               Category Performance
             </h3>
@@ -202,7 +202,7 @@ export function EnhancedProgressDashboard({ blocks, completedBlocks, streak }: E
 
       <Card>
         <CardBody>
-          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
             <CalendarIcon className="w-6 h-6 text-purple-600" />
             Daily Score Comparison
           </h3>
@@ -227,7 +227,7 @@ export function EnhancedProgressDashboard({ blocks, completedBlocks, streak }: E
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-orange-200">
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <Flame className="w-6 h-6 text-orange-500" />
               Streak Progress
             </h3>
@@ -251,7 +251,7 @@ export function EnhancedProgressDashboard({ blocks, completedBlocks, streak }: E
 
         <Card className="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-200">
           <CardBody>
-            <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-blue-600 mb-4 flex items-center gap-2">
               <Trophy className="w-6 h-6 text-yellow-500" />
               Achievements
             </h3>
